@@ -9,6 +9,7 @@ import { NotFindPageRoutes, NotFindPageComponentList } from '../component/404/no
 import { systemRoutes,SystemList } from './system/system.routing';
 import { GameRoutes,GameList } from './game/game.routing';
 import { MallRoutes, MallList } from './mall/mall.routing';
+import { GreensRoutes, GreensList } from './greens/greens.routing';
 
 
 var routes:Routes=[];
@@ -20,6 +21,7 @@ routes=routes.concat(systemRoutes);
 routes=routes.concat(GameRoutes);
 //积分商城栏目管理
 routes=routes.concat(MallRoutes);
+routes=routes.concat(GreensRoutes);
 //错误页面请放最后
 routes = routes.concat(NotFindPageRoutes);
 
@@ -49,5 +51,6 @@ export const ComponentList = [
     NotFindPageComponentList,
     SystemList,
     GameList,    
-    MallList,  
+    MallList, 
+    GreensList, 
 ]
