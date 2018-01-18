@@ -7,8 +7,6 @@ import { HeaderComponent,SideNavComponent } from './layouts';
 import { MainRoutes,MainComponentList } from './main/main.routing';
 import { NotFindPageRoutes, NotFindPageComponentList } from '../component/404/notFindPage.routing';
 import { systemRoutes,SystemList } from './system/system.routing';
-import { GameRoutes,GameList } from './game/game.routing';
-import { MallRoutes, MallList } from './mall/mall.routing';
 import { GreensRoutes, GreensList } from './greens/greens.routing';
 
 
@@ -17,10 +15,7 @@ var routes:Routes=[];
 routes = routes.concat(MainRoutes);
 //系统管理
 routes=routes.concat(systemRoutes);
-//游戏栏目管理
-routes=routes.concat(GameRoutes);
-//积分商城栏目管理
-routes=routes.concat(MallRoutes);
+
 routes=routes.concat(GreensRoutes);
 //错误页面请放最后
 routes = routes.concat(NotFindPageRoutes);
@@ -49,8 +44,6 @@ export const ComponentList = [
     AdminComponent,
     MainComponentList,
     NotFindPageComponentList,
-    SystemList,
-    GameList,    
-    MallList, 
+    SystemList,  
     GreensList, 
 ]
