@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
     selector: 'app-login',
-    template: `
+    template: `test
         <router-outlet></router-outlet>
     `
 })
