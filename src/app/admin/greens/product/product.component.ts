@@ -4,11 +4,11 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 
 @Component({
-    selector: 'lcwebsite-images',
-    templateUrl: 'images.html',
+    selector: 'lcwebsite-product',
+    templateUrl: 'product.html',
 })
 
-export class ImagesComponent implements OnInit {
+export class ProductComponent implements OnInit {
     
     typeList: Array<{ key: string, value: string }> = [];
     // typeList: Array<{ key: string, value: string }> = [        
@@ -26,18 +26,18 @@ export class ImagesComponent implements OnInit {
     //     { key: "联系我们图片", value: "联系我们图片" },        
     // ];
 
-    images: TableStr = {
-        data: gql`query($index:Int,$size:Int,$info:searchImages){
-            list:getImagesPage(pageIndex:$index,pageSize:$size,images:$info){
+    product: TableStr = {
+        data: gql`query($index:Int,$size:Int,$info:searchProduct){
+            list:getProductPage(pageIndex:$index,pageSize:$size,product:$info){
                 id,desc,type,updateAt,createAt
             }
-            count:getImagesCount(images:$info)
+            count:getProductCount(product:$info)
         }`,
         delete: gql`mutation($id:String){
-            deleteImages(id:$id)
+            deleteProduct(id:$id)
         }`,
-        url: "admin/addlcimg",
-        where: { images: {} }
+        url: "admin/addlcproduct",
+        where: { product: {} }
     };
 
     constructor(private router: Router, private apollo: Apollo) {
@@ -45,7 +45,7 @@ export class ImagesComponent implements OnInit {
     }
 
     getType() {
-        var typeStr = "图片类别";
+        var typeStr = "产品类别";
         this.apollo.query({
             query: gql`query($type:searchType){
                 types:getTypeWhere(type:$type){

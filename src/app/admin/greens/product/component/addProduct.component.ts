@@ -5,13 +5,13 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 
 @Component({
-    selector: 'lcwebsite-add-images',
-    templateUrl: 'addImages.html',
+    selector: 'lcwebsite-add-product',
+    templateUrl: 'addProduct.html',
 })
 
-export class AddImagesComponent implements OnInit {
+export class AddProductComponent implements OnInit {
 
-    imagesForm: FormGroup = this.fb.group({
+    productForm: FormGroup = this.fb.group({
         id: [''],
         type: ['', Validators.required],
         imageIds: [''],
@@ -20,17 +20,17 @@ export class AddImagesComponent implements OnInit {
         endDate: [this.cdate.endDate],
     });
 
-    images: FormStr = {
+    product: FormStr = {
         data: gql`query($id:String){
-            info:getImagesById(id:$id){
+            info:getProductById(id:$id){
                 id,type,desc
                 ,imageIds:Images{ id name:originalname url:path }
             }
         }`,
-        save: gql`mutation($info:inputImages){
-            saveImages(images:$info){ id }
+        save: gql`mutation($info:inputProduct){
+            saveProduct(product:$info){ id }
         }`,
-        url: "admin/lcimg",
+        url: "admin/lcproduct",
     }
     typeList: Array<{ key: string, value: string }> = [];
     // typeList: Array<{ key: string, value: string }> = [        
@@ -56,7 +56,7 @@ export class AddImagesComponent implements OnInit {
     }
 
     getType() {
-        var typeStr = "图片类别";
+        var typeStr = "产品类别";
         this.apollo.query({
             query: gql`query($type:searchType){
                 types:getTypeWhere(type:$type){

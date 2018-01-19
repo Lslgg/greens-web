@@ -1,0 +1,13 @@
+<template-panel-form Title="添加产品">
+  <data-form [formInfo]="productForm" [dataStr]="product" >
+    <form-item name="type" title="类型" type="select" [dataList]="typeList">
+      <form-validator type="required" title="请选择类型"></form-validator>
+    </form-item>
+    <form-item name="imageIds" title="图片" type="file">
+      <form-validator type="required" title="请选择上传图片"></form-validator>
+    </form-item>
+    <form-item name="desc" title="描述">
+      <form-validator type="required" title="请输入描述"></form-validator>
+    </form-item>    
+  </data-form>
+</template-panel-form>

@@ -13,7 +13,7 @@ export class AddTypeComponent implements OnInit {
     typeForm: FormGroup = this.fb.group({
         id: [''],
         key: ['', Validators.required],
-        value: ['', Validators.required],
+        value: [''],
         type: ['', Validators.required],
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],

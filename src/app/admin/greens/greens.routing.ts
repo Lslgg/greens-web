@@ -5,6 +5,7 @@ import { ImagesRoutes, ImagesList } from './images/images.routing';
 import { ArticleRoutes, ArticleList } from './article/article.routing';
 import { lcNewsRoutes, lcNewsList } from './news/article.routing';
 import { TypeList, TypeRoutes } from './type/type.routing';
+import { ProductList, ProductRoutes } from './product/product.routing';
 
 
 var routes:Routes=[];
@@ -14,6 +15,7 @@ routes = routes.concat(ImagesRoutes);
 routes = routes.concat(ArticleRoutes);
 routes = routes.concat(lcNewsRoutes);
 routes = routes.concat(TypeRoutes);
+routes = routes.concat(ProductRoutes);
 export var GreensRoutes: Routes = routes;
 
 //一定要将路由加载的模块导出到admin.module模块
@@ -21,7 +23,8 @@ export const GreensList = [
     ImagesList,
     ArticleList,
     lcNewsList,
-    TypeList
+    TypeList,
+    ProductList,
 ]
 
 

@@ -15,7 +15,7 @@ var routes:Routes=[];
 routes = routes.concat(MainRoutes);
 //系统管理
 routes=routes.concat(systemRoutes);
-
+//聊城韭菜
 routes=routes.concat(GreensRoutes);
 //错误页面请放最后
 routes = routes.concat(NotFindPageRoutes);

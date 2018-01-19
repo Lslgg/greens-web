@@ -59,7 +59,7 @@ export class AddMenuComponent implements OnInit {
 
         var sql = gql`query getMenubyId($id:String){
             menu:getMenuById(id:$id){
-                id title menuImg isLeaf pid code url isValid
+                id title menuImg pid code url isValid
             }
         }`;
         var queryInfo = { query: sql, variables: { id } };
@@ -84,11 +84,10 @@ export class AddMenuComponent implements OnInit {
         var code = menu.code;
         var url = menu.url;
         var menuImg = menu.menuImg;
-        var isLeaf = menu.isLeaf;
         var isValid = menu.isValid;
         var menuForm = {
             id: menuId, pid, parentTitle, title, code,
-            url, menuImg, isLeaf, isValid
+            url, menuImg, isValid
         }
 
         this.menuForm.setValue(menuForm)
