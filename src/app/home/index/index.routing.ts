@@ -7,7 +7,8 @@ import { SaboutComponent } from './sabout/sabout.component';
 import { SjoinComponent } from './sjoin/sjoin.component';
 
 export const IndexRoutes: Routes = [
-  { path: '', component: IndexComponent, data: { title: '聊城韭菜', module: 'none', power: "none" } },
+  // { path: '', component: IndexComponent, data: { title: '聊城韭菜', module: 'none', power: "none" } },
+  { path: '', redirectTo: '/home/index/sproduct', pathMatch: 'full', },
   {
     path: 'index', component: IndexComponent, data: { title: '聊城韭菜', module: 'none', power: "none" },
     children: [

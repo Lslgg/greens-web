@@ -5,18 +5,16 @@ import { Apollo } from 'apollo-angular/Apollo';
 import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Component({
-    selector: 'lcwebsite-home-lcproduct',
-    templateUrl: 'lcproduct.html',
+    selector: 'lcwebsite-home-about',
+    templateUrl: 'about.html',
     styleUrls: ['../home.css'],
 })
 
-export class LcProductComponent implements OnInit {
+export class AboutComponent implements OnInit {
 
-    
     constructor(private router: Router, private apollo: Apollo) {
     }
 
     ngOnInit() {
-
     }
 }
