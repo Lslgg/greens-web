@@ -37,6 +37,8 @@ export class PageComponent implements OnInit {
     initPage(index: number, count: number) {
         if (this.index <= this.count && this.index > 0 && this.count >= 2)
             this.isShow = true;
+        else
+            return;
         if (this.index - 3 > 0 && this.index + 3 <= this.count) {
             this.indexList[0] = this.index - 3;
             this.indexList[1] = this.index - 2;
