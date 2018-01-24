@@ -16,5 +16,21 @@ export class IndexComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.getType();
     }
+
+    getType() {
+        var typeStr = "文章类别";
+        this.apollo.query({
+            query: gql`query{
+                getImagesWhere(type:$type){
+                    key value
+                }
+            }`,
+            // variables: { type: { "type": `{"$eq":"${typeStr}"}` } }
+        }).subscribe(({ data }) => {
+            console.log(data);
+        });
+    }
+
 }

@@ -23,6 +23,7 @@
         "karma.conf.js":true,
         "protractor.conf.js":true,
         "upgrade.md":true,
+        "e2e":true,        
         "src/test.ts":true
     }
 }
