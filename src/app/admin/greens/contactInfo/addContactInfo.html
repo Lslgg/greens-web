@@ -1,0 +1,28 @@
+<template-panel-form Title="添加联系信息">
+  <data-form [formInfo]="contactInfoForm" [dataStr]="contactInfo">
+    <form-item name="comName1" title="首页头部-公司名1">
+      <form-validator type="required" title="请输入公司名1"></form-validator>
+    </form-item>
+    <form-item name="comName2" title="首页头部-公司名2">
+      <form-validator type="required" title="请输入公司名2"></form-validator>
+    </form-item>
+    <form-item name="sPhone" title="首页头部-销售电话">
+      <form-validator type="required" title="请输入销售电话"></form-validator>
+    </form-item>
+    <form-item name="webName" title="联系我们-底部信息-网站名">
+      <form-validator type="required" title="请输入网站名"></form-validator>
+    </form-item>
+    <form-item name="comAddress" title="联系我们-底部信息-公司地址">
+      <form-validator type="required" title="请输入公司地址"></form-validator>
+    </form-item>
+    <form-item name="cPhone1" title="联系我们-底部信息-联系电话1">
+      <form-validator type="required" title="请输入联系电话1"></form-validator>
+    </form-item>
+    <form-item name="cPhone2" title="联系我们-底部信息-联系电话2">
+      <form-validator type="required" title="请输入联系电话2"></form-validator>
+    </form-item>
+    <form-item name="webSite" title="联系我们-底部信息-网站地址">
+      <form-validator type="required" title="请输入网站地址"></form-validator>
+    </form-item>
+  </data-form>
+</template-panel-form>

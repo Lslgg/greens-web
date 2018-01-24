@@ -55,7 +55,7 @@ export class ArticleComponent implements OnInit {
         });
     }
 
-    ngOnInit() {
+    ngOnInit() {        
         this.getType();
     }
 }
