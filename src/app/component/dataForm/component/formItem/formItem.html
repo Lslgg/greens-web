@@ -53,8 +53,10 @@
       <mat-checkbox formControlName="{{name}}">{{title}}</mat-checkbox>
     </ng-container>
     <ng-container *ngIf="type=='editor'">
-      <input [(ngModel)]="deitor.content" class="form-control" formControlName="{{name}}" type="hidden">
-      <component-editor [name]="name" #deitor></component-editor>
+      <!-- <input [(ngModel)]="deitor.content" class="form-control" formControlName="{{name}}" type="hidden">
+      <component-editor [name]="name" #deitor></component-editor> -->
+      <input [(ngModel)]="editor.content" class="form-control" formControlName="{{name}}" type="hidden">
+      <editor-TinyMce [elementId]="name" [initContent]="editorContent" #editor></editor-TinyMce>
     </ng-container>
     <ng-container *ngIf="type=='hidden'">
       <input type="hidden" class="form-control" formControlName="{{name}}" placeholder="{{title}}">

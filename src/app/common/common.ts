@@ -1,3 +1,6 @@
+import { Injectable } from "@angular/core";
+
+@Injectable()
 export class CommonData implements CommonData {
 
     startDate: String;
