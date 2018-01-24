@@ -20,16 +20,17 @@ export class IndexComponent implements OnInit {
     }
 
     getType() {
-        var typeStr = "文章类别";
-        this.apollo.query({
-            query: gql`query{
-                getImagesWhere(type:$type){
-                    key value
+        var typeStr = ["\"首页logo\"","\"首页幻灯片\""];
+        type Image = { id: String, imageIds: any, type: String };
+        this.apollo.query<{ list: Array<Image> }>({
+            query: gql`query($infolist:searchImages){
+                list:getImagesWhere(images:$infolist){
+                    id,imageIds:Images{id name:originalname url:path},type
                 }
             }`,
-            // variables: { type: { "type": `{"$eq":"${typeStr}"}` } }
+            variables: { infolist: { "type":`{"$in":[${typeStr}]}` } }
         }).subscribe(({ data }) => {
-            console.log(data);
+            console.log(data.list);
         });
     }
 

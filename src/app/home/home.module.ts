@@ -16,12 +16,11 @@ import { DataModalModule } from '../component/dataModal';
 import { FontawesomeModule } from '../component/fontawesome';
 //Materia Ui
 import { MaterialList } from '../common/material.list';
+//home layout 
+import { HeaderComponent, NavComponent, BottomComponent } from './layout';
 
 import { HomeRoutingModule, ComponentList } from './home.routing';
 import { HomeComponent } from './home.component';
-
-
-
 
 @NgModule({
     imports: [
@@ -42,6 +41,9 @@ import { HomeComponent } from './home.component';
     exports: [],
     declarations: [
         BreadcrumbsComponent,
+        HeaderComponent,
+        NavComponent,
+        BottomComponent,
         ComponentList
     ],
     providers: [
