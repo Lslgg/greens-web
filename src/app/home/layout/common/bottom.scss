@@ -1,0 +1,37 @@
+.bottom {
+    div.bottombar {
+        background-color: #488526;
+        height: 10px;
+        text-align: center;
+      }
+    div.bottombox {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      text-align: center;
+      background-color: #fff;
+      div.bnavbox{
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 13px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        span.spbar {
+            /* font-size: 10px; */
+            /* line-height: 10px; */
+            font-size: 8px !important;
+            margin: 0 5px;
+          }
+      }
+    }
+    div.btextbox{
+        p {
+            margin: 0;
+            font-size: 13px;
+            color: #333;
+            font-weight: bold;
+          }
+    }
+}

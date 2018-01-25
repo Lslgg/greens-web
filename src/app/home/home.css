@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   /* margin: 0;
   padding: 0; */
   font-family: "Microsoft YaHei";
@@ -10,130 +9,7 @@ body {
   min-width: 1110px;
 }
 
-.topbar {
-  background-color: #488526;
-}
 
-.topbar>div {
-  float: right;
-  margin-right: 15%;
-  padding: 2px 0;
-}
-
-.topbar>div>span {
-  color: #fff;
-  font-weight: 350;
-  font-size: 13px;
-  margin: 0 5px;
-}
-
-.toptext {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
-}
-
-.toptext>p {
-  margin: 5px 0;
-  padding: 0;
-  line-height: 38px;
-  font-size: 38px;
-  color: #488526;
-  font-weight: 350;
-  word-wrap: none !important;
-  word-break: normal !important;
-}
-
-.bgf {
-  background-color: #fff;
-}
-
-.navbox {
-  background-color: #488526;
-}
-
-.navbox>div {
-  /* border-right: 0.1px solid #aaa; */
-  background-image: url('../../assets/img/nav_03.jpg');
-  background-position: right center;
-  background-repeat: no-repeat;
-  font-size: 20px;
-  height: 60px;
-  line-height: 60px;
-  vertical-align: center;
-  color: #fff;
-  word-wrap: none;
-  word-break: normal;
-  min-width: 110px;
-  margin: 5px 0;
-}
-
-.navbox>div:hover {
-  background-color: #fff;
-  color: #488526;
-  cursor: pointer;
-}
-
-.navactive {
-  background-color: #fff;
-  color: #488526 !important;
-  cursor: pointer;
-}
-
-.navbox>div:first-child,
-.navbox>div:last-child {
-  background-color: #488526;
-  background-image: none;
-  cursor: auto;
-}
-
-.searbox {
-  background-image: none !important;
-  padding-right: 0;
-}
-
-.searbox:hover {
-  background-color: #488526 !important;
-}
-
-.searbox>div {
-  height: 30px;
-  margin: 20px 0;
-  line-height: 0;
-  border: 1px solid #fff;
-  border-radius: 15px;
-  padding: 2px 10px 2px 6px;
-  background-color: #fff;
-}
-
-.searbox>div>span {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-  vertical-align: middle;
-  border: 0;
-  padding: 0;
-  background-image: url('../../assets/img/sear.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
-.searbox>div>input {
-  width: 53px;
-  height: 24px;
-  display: inline-block;
-  vertical-align: middle;
-  border: 0;
-  padding: 2px;
-  line-height: 24px;
-  font-size: 15px;
-  text-align: center;
-}
-
-.bottombar {
-  background-color: #488526;
-  height: 10px;
-}
 
 .indexrow>div>div>div>img {
   width: 100%;
@@ -288,17 +164,6 @@ body {
   margin-bottom: 25px;
 }
 
-.logobox {
-  padding: 0;
-  height: 135px;
-  width: 100%;
-}
-
-.logobox>img {
-  width: 100%;
-  height: 100%;
-}
-
 .pdnav {
   height: 40px;
   color: #488526;
@@ -390,19 +255,20 @@ body {
   overflow: hidden;
   letter-spacing: 1px;
 }
+
 .detailbox {
-  width:75%;
-  height:35px;
+  width: 75%;
+  height: 35px;
   line-height: 35px;
-  margin:auto;
-  color:grey;
+  margin: auto;
+  color: grey;
   text-align: center;
-  border:1px solid #ccc;  
+  border: 1px solid #ccc;
   cursor: pointer;
 }
 
 .detailbox:hover {
-  color:#333;
+  color: #333;
   font-weight: 350;
 }
 
@@ -413,20 +279,20 @@ body {
 }
 
 .pagebox {
-  text-align: center;  
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .pagebox>span {
   display: inline-block;
   vertical-align: middle;
   border: 1px solid #488526;
-  color:#488526;
+  color: #488526;
   font-size: 13px;
-  line-height: 18px;  
+  line-height: 18px;
   text-align: center;
   padding: 0 7px;
   cursor: pointer;
@@ -436,6 +302,7 @@ body {
   color: #fff;
   background-color: #488526;
 }
+
 .psactive {
   color: #fff !important;
   background-color: #488526;
@@ -473,36 +340,6 @@ body {
   color: #488526;
   margin: 15px 0 0 0;
   font-weight: 500;
-}
-
-.bnavbox>span {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 13px;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.spbar {
-  /* font-size: 10px; */
-  /* line-height: 10px; */
-  font-size: 8px !important;
-  margin: 0 5px;
-}
-
-.bottombox {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  background-color: #fff;
-}
-
-.btextbox>p {
-  margin: 0;
-  font-size: 13px;
-  color: #333;
-  font-weight: bold;
 }
 
 .jtitle {

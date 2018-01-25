@@ -17,7 +17,7 @@ import { FontawesomeModule } from '../component/fontawesome';
 //Materia Ui
 import { MaterialList } from '../common/material.list';
 //home layout 
-import { HeaderComponent, NavComponent, BottomComponent } from './layout';
+import { HeaderComponent, NavComponent, BottomComponent } from './layout/common';
 
 import { HomeRoutingModule, ComponentList } from './home.routing';
 import { HomeComponent } from './home.component';

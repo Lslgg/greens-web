@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getType();
+        // this.getType();
     }
 
     getType() {
