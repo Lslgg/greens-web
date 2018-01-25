@@ -1,0 +1,44 @@
+.newsbrief{
+    div.isnewstext{
+        font-size: 18px;
+        line-height: 18px;
+        color: #488526;
+        font-weight: 350;
+        margin: 5px 0;
+    }
+    div.isnewsdate {
+        font-size: 17px;
+        line-height: 18px;
+        color: grey;
+        font-weight: 350;
+        margin: 5px 0;
+      }
+    div.inewsbref {
+        font-size: 13px;
+        margin-top: 18px;
+        margin-bottom: 25px;
+        line-height: 20px;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        letter-spacing: 1px;
+      }          
+    div.detailbox {
+        width: 75%;
+        height: 35px;
+        line-height: 35px;
+        margin: auto;
+        color: grey;
+        text-align: center;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+  
+    div.detailbox:hover {
+        color: #333;
+        font-weight: 350;
+    }
+}

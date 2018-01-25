@@ -5,3 +5,8 @@ export * from "./picrow.component";
 export * from "./title.component";
 export * from "./article.component";
 export * from "./snav.component";
+export * from "./page.component";
+export * from "./pnav.component";
+export * from "./pdbox.component";
+export * from "./newsrow.component";
+export * from "./newsbrief.component";

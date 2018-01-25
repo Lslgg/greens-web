@@ -17,7 +17,7 @@ import { FontawesomeModule } from '../component/fontawesome';
 //Materia Ui
 import { MaterialList } from '../common/material.list';
 //home layout 
-import { HeaderComponent, NavComponent, BottomComponent,PicRowComponent, TitleComponent, ArticleComponent, SnavComponent } from './layout/common';
+import { HeaderComponent, NavComponent, BottomComponent,PicRowComponent, TitleComponent, ArticleComponent, SnavComponent, PageComponent, PnavComponent, PdBoxComponent, NewsRowComponent, NewsBriefComponent } from './layout/common';
 
 import { HomeRoutingModule, ComponentList } from './home.routing';
 import { HomeComponent } from './home.component';
@@ -48,6 +48,11 @@ import { HomeComponent } from './home.component';
         TitleComponent,
         ArticleComponent,
         SnavComponent,
+        PageComponent,
+        PnavComponent,
+        PdBoxComponent,
+        NewsRowComponent,
+        NewsBriefComponent,
         ComponentList
     ],
     providers: [

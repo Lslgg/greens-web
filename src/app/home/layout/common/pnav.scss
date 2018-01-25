@@ -1,0 +1,21 @@
+
+.pnav{
+    padding-top:50px;
+    padding-bottom:50px;
+    div.pdnav {
+        height: 40px;
+        color: #488526;
+        line-height: 38px;
+        font-size: 20px;
+        border: 2px solid #488526;
+        font-weight: 410;
+        border-radius: 17px;
+        cursor: pointer;
+      }          
+    div.pdnav:hover {
+        color: #fff;
+        background-color: #488526;
+      }    
+}
+
+  

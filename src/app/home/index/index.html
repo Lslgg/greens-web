@@ -9,85 +9,34 @@
     </div>
     <home-picrow [height]="'320px'" [img]="img1"></home-picrow>
     <home-picrow [height]="'365px'" [img]="img2" [img2]="img3" [hasTwo]="'true'"></home-picrow>
-    <div class="row">
+
+    <div class="row newsbox">
       <div class="col">
-        <div class="row newsbox">
-          <div class="col">
-            <div class="row">
-              <div class="col inewstext">
-                新闻资讯
-              </div>
-            </div>
-            <div class=" row inewshr"></div>
-            <div class="row">
-              <div class="col">
-                <div class="row curp" routerLink="/home/newsDetail/test">
-                  <div class="col-4 newspicbox">
-                    <img src="../../../assets/test/indexpic2.png" alt="pic">
-                  </div>
-                  <div class="col-8 newstitle">
-                    <p>韭菜的益处</p>
-                    <p>每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西</p>
-                  </div>
-                </div>
-                <hr class="abouthr">
-                <div class="row curp" routerLink="/home/newsDetail/test">
-                  <div class="col-4 newspicbox">
-                    <img src="../../../assets/test/indexpic2.png" alt="pic">
-                  </div>
-                  <div class="col-8 newstitle">
-                    <p>韭菜的益处</p>
-                    <p>每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西</p>
-                  </div>
-                </div>
-                <hr class="abouthr">
-                <div class="row curp" routerLink="/home/newsDetail/test">
-                  <div class="col-4 newspicbox">
-                    <img src="../../../assets/test/indexpic2.png" alt="pic">
-                  </div>
-                  <div class="col-8 newstitle">
-                    <p>韭菜的益处</p>
-                    <p>每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西</p>
-                  </div>
-                </div>
-                <hr class="abouthr">
-              </div>
-              <div class="col">
-                <div class="row">
-                  <div class="col inewsrpic">
-                    <img src="../../../assets/test/indexpic2.png" alt="pic">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div class="row">
-                      <div class="col ">
-                        <div class="isnewstext">
-                          韭菜的功效有哪些？
-                        </div>
-                      </div>
-                      <div class="col isnewsdate">
-                        2018/01/04
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                        <p class="inewsbref">每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                        <div class="detailbox">
-                          详情>>>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+        <div class="row">          
+          <div class="col inewstext">
+            新闻资讯
           </div>
         </div>
+
+        <div class=" row inewshr"></div>
+
+        <div class="row">
+          <div class="col">
+            <home-newsrow></home-newsrow>
+            <home-newsrow></home-newsrow>
+            <home-newsrow></home-newsrow>
+          </div>
+          <div class="col">
+            <div class="row" style="margin-bottom:15px;">
+              <div class="col">
+                <home-picrow [height]="'210'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
+              </div>
+            </div>
+            <home-newsbrief></home-newsbrief>
+          </div>
+        </div>
+        
       </div>
     </div>
     <home-snav></home-snav>
