@@ -52,6 +52,10 @@ interface CommonData{
      * 当前月结束日期
     */
     endDate: string;
+    /**
+     * 当前数据服务器
+    */
+    dataServer:String;
 
      /**
      * 日期格式

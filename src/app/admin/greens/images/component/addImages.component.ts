@@ -14,8 +14,8 @@ export class AddImagesComponent implements OnInit {
     imagesForm: FormGroup = this.fb.group({
         id: [''],
         type: ['', Validators.required],
-        imageIds: [''],
-        desc: ['', Validators.required],
+        imageIds: ['', Validators.required],
+        desc: ['默认', Validators.required],
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });

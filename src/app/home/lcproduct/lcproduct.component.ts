@@ -12,7 +12,7 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 
 export class LcProductComponent implements OnInit {
 
-    
+
     constructor(private router: Router, private apollo: Apollo) {
     }
 

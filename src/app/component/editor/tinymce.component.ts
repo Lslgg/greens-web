@@ -18,7 +18,6 @@ import { environment } from '../../../environments/environment';
 
 export class TinyMceComponent {
     @Input() elementId: string = "my-editor";
-    @Input() imageUploadUrl: string = "http://127.0.0.1:8080/upload"
     @Input() height: number = 180;
     @Input() content: string = "";
 
@@ -40,11 +39,12 @@ export class TinyMceComponent {
         tinymce.remove(this.editor);
     }
 
-    initEditor() {
+    initEditor() {        
         tinymce.init({
             selector: `#${this.elementId}`,
             height: this.height,
             language: 'zh_CN',
+            valid_elements : "*[*]",
             plugins: ['link', 'paste', 'table', 'image',"code fullscreen"],
             toolbar: `insertfile undo redo 
                 | styleselect | bold italic | link image jbimages | code fullscreen`,
