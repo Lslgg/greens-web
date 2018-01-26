@@ -7,13 +7,21 @@
         </div>
       </div>
     </div>
-    <home-picrow [height]="'320px'" [img]="img1"></home-picrow>
-    <home-picrow [height]="'365px'" [img]="img2" [img2]="img3" [hasTwo]="'true'"></home-picrow>
+    <home-picrow [height]="'320px'" [type]="'首页图片1'"></home-picrow>
+    <div class="row">
+      <div class="col">
+        <home-picrow [height]="'365px'" [img]="img2"></home-picrow>
+      </div>
+      <div class="col">
+        <home-picrow [height]="'365px'" [img]="img3"></home-picrow>
+      </div>
+    </div>
+    <home-snav></home-snav>
 
     <div class="row newsbox">
       <div class="col">
 
-        <div class="row">          
+        <div class="row">
           <div class="col inewstext">
             新闻资讯
           </div>
@@ -23,23 +31,21 @@
 
         <div class="row">
           <div class="col">
-            <home-newsrow></home-newsrow>
-            <home-newsrow></home-newsrow>
-            <home-newsrow></home-newsrow>
+            <home-newsrow [index]="1" [limit]="3" #newsRow></home-newsrow>
           </div>
           <div class="col">
             <div class="row" style="margin-bottom:15px;">
               <div class="col">
-                <home-picrow [height]="'210'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
+                <home-picrow [height]="'210px'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
               </div>
             </div>
             <home-newsbrief></home-newsbrief>
           </div>
         </div>
-        
+
       </div>
     </div>
-    <home-snav></home-snav>
+
     <home-picrow [height]="'380px'" [img]="img4"></home-picrow>
   </div>
 </div>

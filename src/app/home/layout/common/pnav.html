@@ -1,25 +1,13 @@
 <div class="row pnav">
-    <div class="col">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col">
-                <div class="pdnav">
-                    韭菜
-                </div>
-            </div>
-            <div class="col">
-                <div class="pdnav">
-                    韭菜花
-                </div>
-            </div>
-            <div class="col ">
-                <div class="pdnav">
-                    韭菜园
-                </div>
-            </div>
-            <div class="col"></div>
-            <div class="col"></div>
+  <div class="col">
+    <div class="row justify-content-center">
+      <ng-container *ngFor="let index of typeList;let i=index">
+        <div class="col-2">
+          <div class="pdnav" [class.pnavactive]="styleList[i]" (click)="change(i,index.key)">
+            {{index.key}}
+          </div>
         </div>
+      </ng-container>
     </div>
+  </div>
 </div>

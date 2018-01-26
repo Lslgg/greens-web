@@ -10,7 +10,7 @@ import gql from 'graphql-tag';
 
 export class PdBoxComponent implements OnInit {
 
-
+    @Input() imgList: Array<String> = [];
     constructor( @Inject("commonData") private cdata: CommonData,
         private apollo: Apollo) { }
 

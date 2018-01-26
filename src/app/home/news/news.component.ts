@@ -13,6 +13,7 @@ export class NewsComponent implements OnInit {
 
     count:number;
     index:number;
+    limit:number = 5;
     constructor(private router: Router,private route: ActivatedRoute, private apollo: Apollo) {
     }
 
@@ -29,7 +30,8 @@ export class NewsComponent implements OnInit {
         this.count = 100;
     }
 
-    onChangep(num:number) {                
+    onChangep(num:number) {        
+        this.index = num;               
         this.router.navigate(['/home/news/'+num]);
     }
 }

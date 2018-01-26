@@ -25,28 +25,9 @@ body {
   padding: 0;
 }
 
-.showbox {
-  width: 100%;
-  padding: 5px 10%;
-  background-color: #fff;
-}
 
-.snavactive {
-  border: 2px solid #488526 !important;
-}
 
-.snav>div>div {
-  font-size: 15px;
-  color: #488526;
-  cursor: pointer;
-  border: 2px solid #fff;
-  border-radius: 15px;
-}
 
-.showcontent {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 .sppic1 {
   width: 100%;
@@ -215,9 +196,9 @@ body {
   height: 1px;
 }
 
-.showcontent {
-  height: 400px;
-  overflow-y: auto;
+.pdv50 {
+  padding-top:50px;
+  padding-bottom: 50px;
 }
 
 .nomg {

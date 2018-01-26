@@ -12,16 +12,13 @@ export class PicRowComponent implements OnInit {
 
     @Input() type;
     @Input() height: String = "50px";
-    @Input() url: String;
-    @Input() img: String;
-    @Input() img2: String;
-    @Input() hasTwo: Boolean = false;
+    @Input() img: String = '';
 
     constructor( @Inject("commonData") private cdata: CommonData,
         private apollo: Apollo) { }
 
     ngOnInit() {
-        if (!this.img) {
+        if (this.type) {
             type Image = { id: String, imageIds: any, type: String };
             this.apollo.query<{ img: Image }>({
                 query: gql`query($info:searchImages){
@@ -29,13 +26,12 @@ export class PicRowComponent implements OnInit {
                         id,imageIds:Images{id name:originalname url:path},type
                     }
                 }`,
-                variables: { "type": "{\"$eq\":\"${this.type}\"}" }
+                variables: { info: { "type": `{"$eq":"${this.type}"}` } }
             }).subscribe(({ data }) => {
-                if (data.img) {
+                if (data.img && data.img[0]) {
                     this.img = this.cdata.dataServer + '/' + data.img.imageIds[0].url;
                 }
             });
         }
-
     }
 }

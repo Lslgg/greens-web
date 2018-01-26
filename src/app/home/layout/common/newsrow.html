@@ -1,10 +1,12 @@
+<ng-container *ngFor="let news of newsList">
 <div class="row newsrow" routerLink="/home/newsDetail/test">
-    <div class="col-4 newspicbox">
-        <img src="../../../assets/test/indexpic2.png" alt="pic">
-    </div>
-    <div class="col-8 newstitle">
-        <p>韭菜的益处</p>
-        <p>每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西每个东西</p>
-    </div>
+  <div class="col-4 newspicbox">
+    <img src="{{dataServer}}{{news.imageIds[0].url}}" alt="pic">
+  </div>
+  <div class="col-8 newstitle">
+    <p>{{news.title}}</p>
+    <p>{{news.brief}}</p>
+  </div>
 </div>
 <hr class="abouthr">
+</ng-container>

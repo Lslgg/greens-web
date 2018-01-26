@@ -13,7 +13,8 @@ export class AddlcNewsComponent implements OnInit {
     lcnewsForm: FormGroup = this.fb.group({
         id: [''],
         title: ['', Validators.required],
-        imageIds: [''],        
+        brief: ['', Validators.required],
+        imageIds: ['',Validators.required],        
         content: ['', Validators.required],
         isValid: ['', Validators.required],
         startDate: [this.cdate.startDate],

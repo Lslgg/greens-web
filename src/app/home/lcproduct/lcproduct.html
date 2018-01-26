@@ -1,10 +1,10 @@
-<home-picrow [type]="'首页-产品展示图2'" [height]="'190px'"></home-picrow>
-<div class="row">
-  <div class="col text-center pdv50">
+<home-picrow [type]="'产品展示栏目图片'" [height]="'190px'"></home-picrow>
+<div class="row" style="padding-bottom:50px;">
+  <div class="col">
     <home-title [ftitle]="'韭菜'" [stitle]="'A tuberosum Rottl.ex Apreng'"></home-title>
     <home-article [type]="'产品展示'"></home-article>
     <hr class="abouthr">
-  <home-pnav></home-pnav>
-  <home-pdbox></home-pdbox>
+    <home-pnav (navChange)="navChange($event)"></home-pnav>
+    <home-pdbox [imgList]="imgList"></home-pdbox>
   </div>
 </div>

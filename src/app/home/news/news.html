@@ -1,26 +1,22 @@
-<home-picrow [type]="'首页-产品展示图2'" [height]="'190px'"></home-picrow>
+<home-picrow [type]="''" [height]="'190px'"></home-picrow>
 
 <div class="row">
-  <div class="col">    
+  <div class="col">
     <div class="row newsbox">
-      <div class="col">                       
-        <home-newsrow></home-newsrow>                         
-        <home-newsrow></home-newsrow>                         
-        <home-newsrow></home-newsrow>                         
-        <home-newsrow></home-newsrow>                         
-        <home-newsrow></home-newsrow>                         
+      <div class="col">
+        <home-newsrow [index]="index" [limit]="limit" ></home-newsrow>
       </div>
       <div class="col">
         <div class="row" style="margin-bottom:30px;">
           <div class="col">
-            <home-picrow [height]="'300px'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
+            <home-picrow [height]="'300px'" [type]="'新闻中心图片1'"></home-picrow>
           </div>
-        </div>        
+        </div>
         <div class="row" style="margin-bottom:30px;">
-            <div class="col">
-              <home-picrow [height]="'300px'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
-            </div>
-          </div> 
+          <div class="col">
+            <home-picrow [height]="'300px'" [type]="'新闻中心图片2'"></home-picrow>
+          </div>
+        </div>
       </div>
     </div>
     <lcwebsite-home-page [index]="index" (onChangePage)="onChangep($event)"></lcwebsite-home-page>
