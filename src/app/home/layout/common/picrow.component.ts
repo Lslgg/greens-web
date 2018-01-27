@@ -17,7 +17,7 @@ export class PicRowComponent implements OnInit {
     constructor( @Inject("commonData") private cdata: CommonData,
         private apollo: Apollo) { }
 
-    ngOnInit() {
+    ngOnInit() {    
         if (this.type) {
             type Image = { id: String, imageIds: any, type: String };
             this.apollo.query<{ img: Image }>({
@@ -27,10 +27,10 @@ export class PicRowComponent implements OnInit {
                     }
                 }`,
                 variables: { info: { "type": `{"$eq":"${this.type}"}` } }
-            }).subscribe(({ data }) => {
-                if (data.img && data.img[0]) {
-                    this.img = this.cdata.dataServer + '/' + data.img.imageIds[0].url;
-                }
+            }).subscribe(({ data }) => {                               
+                if (data.img && data.img.imageIds && data.img.imageIds[0]) {                    
+                    this.img = this.cdata.dataServer + '/' + data.img.imageIds[0].url;                                        
+                }                
             });
         }
     }

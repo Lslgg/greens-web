@@ -1,6 +1,6 @@
 <div class="row indexrow">
   <div class="col">
-    <home-picrow [height]="'400px'" [img]="slide[0]"></home-picrow>
+    <home-picrow [height]="'400px'" [type]="'首页幻灯片'"></home-picrow>
     <div class="row">
       <div class="col nopadding">
         <div class="gbar">
@@ -10,10 +10,10 @@
     <home-picrow [height]="'320px'" [type]="'首页图片1'"></home-picrow>
     <div class="row">
       <div class="col">
-        <home-picrow [height]="'365px'" [img]="img2"></home-picrow>
+        <home-picrow [height]="'365px'" [type]="'首页图片2'"></home-picrow>
       </div>
       <div class="col">
-        <home-picrow [height]="'365px'" [img]="img3"></home-picrow>
+        <home-picrow [height]="'365px'" [type]="'首页图片3'"></home-picrow>
       </div>
     </div>
     <home-snav></home-snav>
@@ -31,12 +31,12 @@
 
         <div class="row">
           <div class="col">
-            <home-newsrow [index]="1" [limit]="3" #newsRow></home-newsrow>
+            <home-newsrow [index]="1" [limit]="3" ></home-newsrow>
           </div>
           <div class="col">
             <div class="row" style="margin-bottom:15px;">
               <div class="col">
-                <home-picrow [height]="'210px'" [img]="'../../../assets/test/indexpic2.png'"></home-picrow>
+                <home-picrow [height]="'210px'" [type]="'首页图片3'"></home-picrow>
               </div>
             </div>
             <home-newsbrief></home-newsbrief>
@@ -46,6 +46,6 @@
       </div>
     </div>
 
-    <home-picrow [height]="'380px'" [img]="img4"></home-picrow>
+    <home-picrow [height]="'380px'" [type]="'首页图片4'"></home-picrow>
   </div>
 </div>

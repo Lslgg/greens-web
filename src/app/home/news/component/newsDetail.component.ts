@@ -16,5 +16,6 @@ export class NewsDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        
     }
 }

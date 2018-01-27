@@ -1,8 +1,4 @@
-<div class="row">
-  <div class="col nopadding">
-    <img src="../../../assets/test/indexpic2.png" alt="pic" class="toppic ">
-  </div>
-</div>
+<home-picrow [type]="'新闻栏目图片'" [height]="'190px'"></home-picrow>
 <div class="row" style="margin:30px 5%;">
   <div class="col">
     <div class="row">
@@ -11,10 +7,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <div style="background-color:red;">
-          内容
-        </div>
+      <div class="col">        
+          <home-article [isNews]="true" [id]="'5a698fc33a3625270cdb4eda'"></home-article>
       </div>
     </div>
     <div class="row">

@@ -1,8 +1,8 @@
-<home-picrow [type]="''" [height]="'190px'"></home-picrow>
+<home-picrow [type]="'新闻栏目图片'" [height]="'190px'"></home-picrow>
 
-<div class="row">
+<div class="row" >
   <div class="col">
-    <div class="row newsbox">
+    <div class="row newsbox" style="min-height:650px;">
       <div class="col">
         <home-newsrow [index]="index" [limit]="limit" ></home-newsrow>
       </div>
@@ -19,6 +19,6 @@
         </div>
       </div>
     </div>
-    <lcwebsite-home-page [index]="index" (onChangePage)="onChangep($event)"></lcwebsite-home-page>
+    <lcwebsite-home-page [index]="index" [count]="count" [limit]="limit" (onChangePage)="onChangep($event)"></lcwebsite-home-page>
   </div>
 </div>

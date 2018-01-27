@@ -11,10 +11,11 @@ import { Apollo } from 'apollo-angular/Apollo';
 
 export class NewsComponent implements OnInit {
 
-    count:number;
-    index:number;
-    limit:number = 5;
-    constructor(private router: Router,private route: ActivatedRoute, private apollo: Apollo) {
+    count: number;
+    index: number;
+    limit: number = 5;
+    isReady: boolean = false;
+    constructor(private router: Router, private route: ActivatedRoute, private apollo: Apollo) {
     }
 
     ngOnInit() {
@@ -22,16 +23,25 @@ export class NewsComponent implements OnInit {
     }
 
     initPage() {
-        var index  = this.route.snapshot.params['index'];        
-        if(!index)
+        var index = this.route.snapshot.params['index'];
+        if (!index)
             index = 1;
-        // this.index = index;
         this.index = parseInt(index);
-        this.count = 100;
+        this.initCount();
     }
 
-    onChangep(num:number) {        
-        this.index = num;               
-        this.router.navigate(['/home/news/'+num]);
+    initCount() {
+        this.apollo.query<{ count: number }>({
+            query: gql`query{
+                count:getlcNewsCount
+            }`,
+        }).subscribe(({ data }) => {
+            this.count = data.count;
+        });
+    }
+
+    onChangep(num: number) {
+        this.index = num;
+        this.router.navigate(['/home/news/' + num]);
     }
 }
