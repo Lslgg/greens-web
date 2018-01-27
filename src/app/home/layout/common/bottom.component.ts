@@ -11,22 +11,22 @@ import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 export class BottomComponent implements OnInit {
 
-    bottomInfo:{ webName: String, comAddress: String, cPhone1: String};
+    bottomInfo: { webName: String, comAddress: String, cPhone1: String, webSite: String };
 
     constructor(private apollo: Apollo) { }
 
-    ngOnInit() {        
-        this.apollo.query<{ bottomInfo: { webName: String, comAddress: String, cPhone1: String, cPhone2: String, webSite: String} }>({
-            query: gql`query {
-                bottomInfo:getContactInfoById(id:"5a67e8a1f422fc1ec8b9bcc7") {
-                    webName,comAddress,cPhone1,webSite
+    ngOnInit() {
+        this.apollo.query<{ bottomInfo: any }>({
+            query: gql`query($id:String) {
+                bottomInfo:getContactInfoById(id:$id) {
+                    webName comAddress cPhone1 webSite
                 }             
-            }`,
-        }).subscribe(({ data }) => {            
-            if (data.bottomInfo) {                  
-                this.bottomInfo = data.bottomInfo;                
-                // this.bottomInfo = Object.assign({},data.bottomInfo);
-            }
+            }`,variables:{id:"5a67e8a1f422fc1ec8b9bcc7"}
+        }).subscribe(({ data }) => {
+            // if (data.bottomInfo) {
+            //     // console.log(data.bottomInfo);
+            //     // this.bottomInfo = data.bottomInfo;
+            // }
         });
     }
 }
