@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import gql from 'graphql-tag';
 
 @Component({
@@ -13,32 +13,45 @@ export class NewsRowComponent implements OnInit {
     @Input() limit: Number = 5;
     @Input()
     set index(index: Number) {
-        this._index = index;
-        this.getNewsList();
+        if (index && this.title && index != this._index) {
+            this._index = index;
+            this.getNewsList();
+        }
     }
     _index: Number = 1;
+    @Input() title: String;
     newsList: Array<{ id: String, title: String, brief: String, imageIds: any }> = [];
     dataServer: String = '';
+    info: String;
     constructor( @Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) { }
 
     ngOnInit() {
         this.dataServer = this.cdata.dataServer + '/';
+        if (!this.title)
+            this.title = '.*';
+        if (!this._index)
+            this._index = 1;
         this.getNewsList();
     }
 
     getNewsList() {
         this.newsList = [];
         this.apollo.query<{ newsList: Array<{ id: String, title: String, brief: String, imageIds: any, createAt: String }> }>({
-            query: gql`query($index:Int,$limit:Int){  
-		        newsList:getlcNewsPage(pageIndex:$index,pageSize:$limit){
+            query: gql`query($index:Int,$limit:Int,$info:RegExp){  
+                    newsList:getlcNewsPage(pageIndex:$index,pageSize:$limit,lcnews:{title:$info}){
                     id,title,brief,imageIds:Images{ url:path },createAt
-            }
-        }`,
-            variables: { "index": `${this._index}`, "limit": `${this.limit}` }
+                }	
+            }`,
+            variables: { "index": `${this._index}`, "limit": `${this.limit}`, "info": `${this.title}` }
         }).subscribe(({ data }) => {
             if (data.newsList) {
                 this.newsList = data.newsList;
+            }
+            if (!this.newsList || this.newsList.length < 1) {
+                this.info = "没有找到您的信息！";
+            } else {
+                this.info = undefined;
             }
         });
     }

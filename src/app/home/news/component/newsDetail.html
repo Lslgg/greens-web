@@ -1,19 +1,19 @@
-<home-picrow [type]="'新闻栏目图片'" [height]="'190px'"></home-picrow>
+<home-picrow [type]="'新闻中心-顶部图片'" [height]="'190px'"></home-picrow>
 <div class="row" style="margin:30px 5%;">
   <div class="col">
     <div class="row">
       <div class="col">
-        <p class="newsdtitle">韭菜的功效有哪些</p>
+        <p class="newsdtitle">{{article.title}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col">        
-          <home-article [isNews]="true" [id]="'5a698fc33a3625270cdb4eda'"></home-article>
+          <home-article [isNews]="true" [id]="id" #article></home-article>
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <p class="newsnext">下一篇：细数韭菜的十大功效</p>
+      <div class="col" *ngIf="nextInfo">
+        <p class="newsnext" routerLink="{{nextInfo.url}}" >下一篇：{{nextInfo.title}}</p>
       </div>
     </div>
   </div>

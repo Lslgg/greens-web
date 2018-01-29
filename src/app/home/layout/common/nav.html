@@ -1,33 +1,33 @@
 <div class="row navrow">
   <div class="col">
-    <div class="row navbox">
+    <div class="row navbox" *ngIf="menuInfo">
       <div class="col">
       </div>
       <div class="col" routerLink="/home/index/sproduct" routerLinkActive="navactive">
-        首&nbsp;&nbsp;页
+        {{menuInfo.name1}}
       </div>
       <div class="col" routerLink="/home/about" routerLinkActive="navactive">
-        关于我们
+        {{menuInfo.name2}}
       </div>
       <div class="col" routerLink="/home/lcproduct" routerLinkActive="navactive">
-        产品展示
+        {{menuInfo.name3}}
       </div>
       <div class="col" routerLink="/home/news" routerLinkActive="navactive">
-        新闻中心
+        {{menuInfo.name4}}
       </div>
       <div class="col" routerLink="/home/garden" routerLinkActive="navactive">
-        韭园风采
+        {{menuInfo.name5}}
       </div>
       <div class="col" routerLink="/home/joinus" routerLinkActive="navactive">
-        公司招聘
+        {{menuInfo.name6}}
       </div>
       <div class="col" routerLink="/home/contactus" routerLinkActive="navactive">
-        联系我们
+        {{menuInfo.name7}}
       </div>
       <div class="col searbox">
         <div>
-          <span></span>
-          <input type="text" placeholder="搜索">
+          <span (click)="doSearch(text.value)"></span>
+          <input type="text" placeholder="搜索" #text>
         </div>
       </div>
       <div class="col">

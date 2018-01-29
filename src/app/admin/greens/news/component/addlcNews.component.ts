@@ -14,7 +14,7 @@ export class AddlcNewsComponent implements OnInit {
         id: [''],
         title: ['', Validators.required],
         brief: ['', Validators.required],
-        imageIds: ['',Validators.required],        
+        imageIds: ['', Validators.required],
         content: ['', Validators.required],
         isValid: ['', Validators.required],
         startDate: [this.cdate.startDate],
@@ -24,7 +24,7 @@ export class AddlcNewsComponent implements OnInit {
     lcnews: FormStr = {
         data: gql`query($id:String){
             info:getlcNewsById(id:$id){
-                id,title,content,isValid
+                id,title,content,isValid,brief
                 ,imageIds:Images{ id name:originalname url:path }
             }
         }`,

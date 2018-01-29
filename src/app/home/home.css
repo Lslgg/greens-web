@@ -105,6 +105,7 @@ body {
   color: #488526;
   margin: 15px 0 0 0;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .jtitle {

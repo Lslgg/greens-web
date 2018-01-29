@@ -8,20 +8,20 @@
       <div class="col">
         <div class="row">
           <div class="col">
-            <div class="bnavbox">
-              <span>网站首页</span>
+            <div class="bnavbox" *ngIf="menuInfo">
+              <span>{{menuInfo.name1}}</span>
               <span class="spbar">丨</span>
-              <span>关于我们</span>
+              <span>{{menuInfo.name2}}</span>
               <span class="spbar">丨</span>
-              <span>新闻中心</span>
+              <span>{{menuInfo.name3}}</span>
               <span class="spbar">丨</span>
-              <span>产品展示</span>
+              <span>{{menuInfo.name4}}</span>
               <span class="spbar">丨</span>
-              <span>韭园风采</span>
+              <span>{{menuInfo.name5}}</span>
               <span class="spbar">丨</span>
-              <span>意见反馈</span>
+              <span>{{menuInfo.name6}}</span>
               <span class="spbar">丨</span>
-              <span>联系我们</span>
+              <span>{{menuInfo.name7}}</span>
             </div>
           </div>
         </div>

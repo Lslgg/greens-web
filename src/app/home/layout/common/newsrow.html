@@ -1,5 +1,5 @@
 <ng-container *ngFor="let news of newsList">
-  <div class="row newsrow" routerLink="/home/newsDetail/test">
+  <div class="row newsrow" routerLink="/home/newsDetail/{{news.id}}">
     <div class="col-4 newspicbox">
       <ng-container *ngIf="news.imageIds[0]">
         <img src="{{dataServer}}{{news.imageIds[0].url}}" alt="pic">
@@ -12,3 +12,4 @@
   </div>
   <hr class="abouthr">
 </ng-container>
+<p *ngIf="info">{{info}}</p>

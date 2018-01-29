@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
     comName1: String = "";
     comName2: String = "";
     sPhone: String = "";
-    constructor(private router: Router, private apollo: Apollo) {}
+
+    constructor(private router: Router, private apollo: Apollo) { }
 
     ngOnInit() {
         this.initData();
@@ -25,7 +26,7 @@ export class HeaderComponent implements OnInit {
             query: gql`query {
                 titlelist:getContactInfoById(id:"5a67e8a1f422fc1ec8b9bcc7") {
                     id,comName1,comName2,sPhone
-                }             
+                }        
             }`,
         }).subscribe(({ data }) => {
             if (data.titlelist) {
