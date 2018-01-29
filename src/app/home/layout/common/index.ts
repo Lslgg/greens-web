@@ -10,3 +10,4 @@ export * from "./pnav.component";
 export * from "./pdbox.component";
 export * from "./newsrow.component";
 export * from "./newsbrief.component";
+export * from "./slide.component";

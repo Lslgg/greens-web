@@ -10,6 +10,6 @@ export const JoinRoutes: Routes = [
 
 //一定要将路由加载的模块导出到主模块
 export const JoinList = [
-  JoinComponent
+  JoinComponent,
 ];
 
