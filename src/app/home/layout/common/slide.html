@@ -1,17 +1,31 @@
 <div class="row slide">
-    <div class="col">
-        <ul class="picul">
-            <ng-container *ngFor="let item of strArr">
-                <li>
-                    <img src="{{item}}" alt="pic">
-                </li>
+  <div class="col" [style.height]="height">
+    <ul class="picul">
+      <ng-container *ngFor="let item of strArr;let i = index;">
+        <ng-container *ngIf="i == 0">
+          <li [@state]="state" (@state.done)="animationDone($event)">
+            <img src="{{item}}" alt="pic">
+          </li>
+        </ng-container>
+        <ng-container *ngIf="i != 0">
+          <li>
+            <img src="{{item}}" alt="pic">
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+    <span class="control cleft" (click)="toggleState(-1)">
+      <</span>
+        <span class="control cright" (click)="toggleState(1)">></span>
+        <ol class="pointlist">
+          <ng-container *ngFor="let item of ponintArray">
+            <ng-container *ngIf="item">
+              <li class="avtiveli"></li>
             </ng-container>
-        </ul>
-    </div>
+            <ng-container *ngIf="!item">
+              <li></li>
+            </ng-container>
+          </ng-container>
+        </ol>
+  </div>
 </div>
-
-<ul>
-    <li>
-
-    </li>
-</ul>

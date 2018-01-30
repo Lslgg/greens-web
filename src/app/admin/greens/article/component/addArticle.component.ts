@@ -35,14 +35,7 @@ export class AddArticleComponent implements OnInit {
         url: "admin/lcarticle",
     }
 
-    // typeList: Array<{ key: string, value: string }> = [        
-    //     { key: "关于我们", value: "关于我们" },
-    //     { key: "产品展示", value: "产品展示" },
-    //     { key: "韭园风采", value: "韭园风采" },
-    //     { key: "公司招聘", value: "公司招聘" },
-    //     { key: "联系我们", value: "联系我们" },        
-    // ];
-    typeList: Array<{ key: string, value: string }> = [];        
+    typeList: Array<{ key: string, value: string }> = [];
 
     files: Array<any> = new Array<any>();
 
@@ -59,13 +52,14 @@ export class AddArticleComponent implements OnInit {
                     key value
                 }
             }`,
-            variables:  { type: { "type": `{"$eq":"${typeStr}"}` } }
+            fetchPolicy: "network-only",
+            variables: { type: { "type": `{"$eq":"${typeStr}"}` } }
         }).subscribe(({ data }) => {
-            this.typeList=data["types"];
+            this.typeList = data["types"];
         });
     }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.getType();
     }
 }

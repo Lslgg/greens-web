@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
 @Component({
     selector: 'editor-TinyMce',
     template: `
-      <textarea id="{{elementId}}">{{initContent}}</textarea>
+      <textarea style="max-width:1100px !important;" id="{{elementId}}">{{initContent}}</textarea>
     `
 })
 
@@ -51,6 +51,7 @@ export class TinyMceComponent {
             skin_url: '/assets/skins/lightgray',
             images_upload_url: `${environment.dataServer}/upload`,
             images_upload_credentials: true,
+            width:1100,
             setup: editor => {
                 this.editor = editor;
                 editor.on('keyup change', (e: any) => {

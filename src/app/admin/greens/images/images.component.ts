@@ -52,6 +52,7 @@ export class ImagesComponent implements OnInit {
                     key value
                 }
             }`,
+            fetchPolicy: "network-only",
             variables:  { type: { "type": `{"$eq":"${typeStr}"}` } }
         }).subscribe(({ data }) => {
             this.typeList=data["types"];
