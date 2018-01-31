@@ -13,7 +13,7 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 export class AddContactInfoComponent implements OnInit {
 
     contactInfoForm: FormGroup = this.fb.group({
-        id: [''],
+        id: [''],        
         comName1: ['', Validators.required],
         comName2: ['', Validators.required],
         sPhone: ['', Validators.required],
@@ -22,6 +22,7 @@ export class AddContactInfoComponent implements OnInit {
         cPhone1: ['', Validators.required],
         cPhone2: ['', Validators.required],
         webSite: ['', Validators.required],
+        title: ['', Validators.required],
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });
@@ -29,7 +30,7 @@ export class AddContactInfoComponent implements OnInit {
     contactInfo: FormStr = {
         data: gql`query($id:String){
             info:getContactInfoById(id:$id){
-                id,comName1,comName2,sPhone,webName,comAddress,cPhone1,cPhone2,webSite                
+                id,comName1,comName2,sPhone,webName,comAddress,cPhone1,cPhone2,webSite,title           
             }
         }`,
         save: gql`mutation($info:inputContactInfo){

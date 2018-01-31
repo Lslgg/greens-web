@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { setInterval } from 'timers';
 
 @Component({
     selector: 'home-slide',
@@ -41,7 +42,7 @@ export class SlideComponent implements OnInit {
             this.setPoint(-1);
         } else if (flag == 1 && this.strArr.length > 2) {
             this.state = 'right';
-            this.setPoint(1);            
+            this.setPoint(1);
         }
     }
 
@@ -64,7 +65,7 @@ export class SlideComponent implements OnInit {
                 t = this.ponintArray.length - 1;
             }
         }
-        this.ponintArray[t] = true;    
+        this.ponintArray[t] = true;
     }
 
     animationDone(e: any) {
@@ -127,9 +128,16 @@ export class SlideComponent implements OnInit {
             }
             this.strArr.push(this.list[0]);
             this.ponintArray[0] = true;
+            this.toNext();
         } else if (this.list.length == 1) {
             this.strArr.push(this.list[0]);
             this.strArr.push(this.list[0]);
         }
+    }
+
+    toNext() {
+        setInterval(() => {
+            this.toggleState(1);
+        }, 5000);
     }
 }

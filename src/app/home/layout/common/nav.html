@@ -1,8 +1,6 @@
 <div class="row navrow">
   <div class="col">
     <div class="row navbox" *ngIf="menuInfo">
-      <div class="col">
-      </div>
       <div class="col" routerLink="/home/index/sproduct" routerLinkActive="navactive">
         {{menuInfo.name1}}
       </div>
@@ -24,14 +22,12 @@
       <div class="col" routerLink="/home/contactus" routerLinkActive="navactive">
         {{menuInfo.name7}}
       </div>
-      <div class="col searbox">
+      <!-- <div class="col searbox">
         <div>
           <span (click)="doSearch(text.value)"></span>
           <input type="text" placeholder="搜索" #text>
         </div>
-      </div>
-      <div class="col">
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

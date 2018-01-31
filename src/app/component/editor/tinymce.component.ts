@@ -18,7 +18,7 @@ import { environment } from '../../../environments/environment';
 
 export class TinyMceComponent {
     @Input() elementId: string = "my-editor";
-    @Input() height: number = 180;
+    @Input() height: number = 600;
     @Input() content: string = "";
 
     @Input() initContent: string;

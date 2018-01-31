@@ -30,6 +30,9 @@ export class PnavComponent implements OnInit {
                     this.styleList.push(false);
                 }
                 this.styleList[0] = true;
+                if (this.typeList[0].key) {
+                    this.navChange.emit(this.typeList[0].key);
+                }
             }
         });
     }

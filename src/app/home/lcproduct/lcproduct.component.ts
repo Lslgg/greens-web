@@ -12,17 +12,19 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 
 export class LcProductComponent implements OnInit {
 
-
     imgList: Array<String> = [];
     constructor( @Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) {
     }
 
     ngOnInit() {
-
     }
 
     navChange(e: String) {
+        this.getImgList(e);
+    }
+
+    getImgList(e: String) {
         this.imgList = [];
         type Image = { imageIds: any };
         this.apollo.query<{ imglist: Array<Image> }>({

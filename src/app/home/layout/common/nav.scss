@@ -1,6 +1,8 @@
 .navrow {
+  background-color: #488526;
+  padding-left:20px;
+  padding-right:20px;
   div.navbox {
-    background-color: #488526;
     div {
       background-image: url('../../../../assets/img/nav_03.jpg');
       background-position: right center;
@@ -16,11 +18,14 @@
       margin: 5px 0;
       text-align: center;
     }
-    div:first-child,
+    // div:first-child,
+    // div:last-child {
+    //   background-color: #488526 !important;
+    //   background-image: none !important;
+    //   cursor: auto !important;
+    // }
     div:last-child {
-      background-color: #488526 !important;
-      background-image: none !important;
-      cursor: auto !important;
+      background-image: none;
     }
     div:hover {
       background-color: #fff;

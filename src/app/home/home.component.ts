@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'home-home',
@@ -13,10 +14,10 @@ import gql from 'graphql-tag';
 
 export class HomeComponent implements OnInit {
 
-    constructor(private router: Router) { 
+    constructor(private router: Router) { }
 
-    }
+    ngOnInit() {
 
-    ngOnInit() { }
+     }
 
 }

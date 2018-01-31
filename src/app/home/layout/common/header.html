@@ -1,20 +1,21 @@
+
 <div class="row headder">
   <div class="col">
     <div class="row ">
       <div class="col topbar">
         <div>
-          <span>设为首页</span>
+          <span onclick="SetHome(this,window.location)">设为首页</span>
           <span>丨</span>
-          <span>加入收藏</span>
+          <span onclick="AddFavorite('我的网站',location.href)">加入收藏</span>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="row" style="padding-left:5%;">
-          <div class="col-3">            
+          <div class="col-3">
             <home-picrow [type]="'首页-logo'" [height]="'135px'"></home-picrow>
-          </div>          
+          </div>
           <div class="col-9 toptext">
             <p>{{comName1}}</p>
             <p>{{comName2}}</p>
