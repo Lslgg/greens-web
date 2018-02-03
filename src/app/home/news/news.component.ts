@@ -20,7 +20,7 @@ export class NewsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title = this.route.snapshot.params['title']; 
+        this.title = this.route.snapshot.params['title'];        
         this.initPage();       
     }
 
@@ -29,6 +29,7 @@ export class NewsComponent implements OnInit {
         if (!index)
             index = 1;
         this.index = parseInt(index);
+        console.log(this.index);
         this.initCount();
     }
 
@@ -38,7 +39,7 @@ export class NewsComponent implements OnInit {
                 count:getlcNewsCount
             }`,
         }).subscribe(({ data }) => {
-            this.count = data.count;            
+            this.count = data.count;          
         });
     }
 

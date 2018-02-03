@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NotFindPageRoutes, NotFindPageComponentList } from '../component/404/notFindPage.routing';
 import { HomeComponent } from './home.component';
 import { IndexRoutes, IndexList } from './index/index.routing';
 import { AboutRoutes, AboutList } from './about/about.routing';
@@ -10,7 +9,13 @@ import { NewsList, NewsRoutes } from './news/news.routing';
 import { GardenList, GardenRoutes } from './garden/garden.routing';
 import { JoinRoutes, JoinList } from './join/join.routing';
 import { ContactList, ContactRoutes } from './contact/contact.routing';
-
+import { 
+  PageComponent,
+  PicRowComponent,
+  ArticleComponent,
+  NewsRowComponent,
+  TitleComponent,
+  SlideComponent  } from './components'
 
 var routes: Routes = [];
 
@@ -21,8 +26,6 @@ routes = routes.concat(NewsRoutes);
 routes = routes.concat(JoinRoutes);
 routes = routes.concat(ContactRoutes);
 routes = routes.concat(GardenRoutes);
-//错误页面请放最后
-routes = routes.concat(NotFindPageRoutes);
 
 export var routeList: Routes = [
   {
@@ -51,5 +54,10 @@ export const ComponentList = [
   GardenList,
   JoinList,
   ContactList,
-  NotFindPageComponentList
+  PageComponent,
+  PicRowComponent,
+  ArticleComponent,
+  NewsRowComponent,
+  TitleComponent,
+  SlideComponent 
 ]

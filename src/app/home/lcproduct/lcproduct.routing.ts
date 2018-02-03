@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { LcProductComponent } from './lcproduct.component';
+import { PdBoxComponent,PnavComponent } from './components';
+
 
 export const LcProductRoutes: Routes = [
   {
@@ -10,6 +12,8 @@ export const LcProductRoutes: Routes = [
 
 //一定要将路由加载的模块导出到主模块
 export const LcProductList = [
-  LcProductComponent
+  LcProductComponent,
+  PdBoxComponent,
+  PnavComponent
 ];
 
