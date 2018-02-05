@@ -66,8 +66,7 @@ export class TinyMceComponent {
                             var list = selectedNode.src.split("/");
                             var fileName=list[list.length-1];
                             var url=`${environment.dataServer}/delimg/${fileName}`;
-                            this.http.post(url, null).subscribe(data=>{
-                                console.log(data);
+                            this.http.post(url, null).subscribe(data=>{                                
                             })
                         }
                     }

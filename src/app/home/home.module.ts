@@ -16,14 +16,14 @@ import { HeaderComponent,NavComponent,BottomComponent } from './layout';
         ReactiveFormsModule,
         HttpModule,
         SystemCommonModule,       
-        HomeRoutingModule        
+        HomeRoutingModule,              
     ],
     exports: [],
     declarations: [       
         ComponentList,
         HeaderComponent,
         NavComponent,
-        BottomComponent
+        BottomComponent,
     ],
     providers: [
     ],

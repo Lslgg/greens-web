@@ -10,15 +10,13 @@ import { systemRoutes,SystemList } from './system/system.routing';
 import { GreensRoutes, GreensList } from './greens/greens.routing';
 
 
-var routes:Routes=[];
-//首页
-routes = routes.concat(MainRoutes);
-//系统管理
-routes=routes.concat(systemRoutes);
-//聊城韭菜
-routes=routes.concat(GreensRoutes);
-//错误页面请放最后
-routes = routes.concat(NotFindPageRoutes);
+var routes:Routes=[
+  ...MainRoutes, //首页
+  ...systemRoutes, //系统管理
+  ...GreensRoutes, //聊城韭菜
+  ...NotFindPageRoutes //错误页面请放最后
+];
+
 
 export var routeList: Routes = [
   {

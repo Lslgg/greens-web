@@ -28,8 +28,7 @@ export class NewsComponent implements OnInit {
         var index = this.route.snapshot.params['index'];
         if (!index)
             index = 1;
-        this.index = parseInt(index);
-        console.log(this.index);
+        this.index = parseInt(index);        
         this.initCount();
     }
 

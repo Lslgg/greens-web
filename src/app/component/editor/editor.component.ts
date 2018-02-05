@@ -16,8 +16,7 @@ export class EditorComponent implements OnInit {
         imageUploadParam: 'avatar',
         imageUploadURL: `${environment.dataServer}/profile`,
         events: {
-            'froalaEditor.initialized': () => {
-                console.log('editor');
+            'froalaEditor.initialized': () => {                
             },
             'froalaEditor.image.removed': (e, editor, $img) => {
                 var list = $img[0].src.split("/");

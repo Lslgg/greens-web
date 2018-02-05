@@ -53,8 +53,7 @@ export class NewsRowComponent implements OnInit {
                 }	
             }`,
             variables: { "index": `${this._index}`, "limit": `${this.limit}`, "info": `${this._title}` }
-        }).subscribe(({ data }) => {
-            console.log(data.newsList);
+        }).subscribe(({ data }) => {            
             if (data.newsList) {
                 this.newsList = data.newsList;
             }

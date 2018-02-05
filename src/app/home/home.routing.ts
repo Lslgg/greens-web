@@ -17,15 +17,15 @@ import {
   TitleComponent,
   SlideComponent  } from './components'
 
-var routes: Routes = [];
-
-routes = routes.concat(IndexRoutes);
-routes = routes.concat(AboutRoutes);
-routes = routes.concat(LcProductRoutes);
-routes = routes.concat(NewsRoutes);
-routes = routes.concat(JoinRoutes);
-routes = routes.concat(ContactRoutes);
-routes = routes.concat(GardenRoutes);
+var routes: Routes = [
+  ...IndexRoutes,
+  ...AboutRoutes,
+  ...LcProductRoutes,
+  ...NewsRoutes,
+  ...JoinRoutes,
+  ...ContactRoutes,
+  ...GardenRoutes
+];
 
 export var routeList: Routes = [
   {

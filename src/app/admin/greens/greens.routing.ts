@@ -10,16 +10,17 @@ import { ContactInfoRoutes, ContactInfoList } from './contactInfo/contactInfo.ro
 import { MenulRoutes, MenulList } from './menul/menul.routing';
 
 
-var routes: Routes = [];
-//玩家充值管理
-routes = routes.concat(ImagesRoutes);
-//玩家充值管理
-routes = routes.concat(ArticleRoutes);
-routes = routes.concat(lcNewsRoutes);
-routes = routes.concat(TypeRoutes);
-routes = routes.concat(ProductRoutes);
-routes = routes.concat(ContactInfoRoutes);
-routes = routes.concat(MenulRoutes);
+var routes: Routes = [
+    ...ImagesRoutes,
+    ...ArticleRoutes,
+    ...lcNewsRoutes,
+    ...TypeRoutes,
+    ...ProductRoutes,
+    ...ContactInfoRoutes,
+    ...MenulRoutes,
+    
+];
+
 export var GreensRoutes: Routes = routes;
 
 //一定要将路由加载的模块导出到admin.module模块
