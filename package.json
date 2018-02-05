@@ -25,6 +25,7 @@
     "@angular/material": "^5.1.0",
     "@angular/platform-browser": "^5.2.1",
     "@angular/platform-browser-dynamic": "^5.2.1",
+    "@angular/platform-server": "^5.2.3",
     "@angular/router": "^5.2.1",
     "angular-froala-wysiwyg": "^2.7.3",
     "apollo-angular": "^1.0.1",
@@ -52,7 +53,7 @@
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
-    "@angular/compiler-cli": "^5.2.1",
+    "@angular/compiler-cli": "^5.2.3",
     "@angular/language-service": "^5.2.1",
     "@types/jasmine": "~2.8.5",
     "@types/jasminewd2": "~2.0.3",

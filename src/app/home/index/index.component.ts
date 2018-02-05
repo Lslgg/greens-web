@@ -17,6 +17,7 @@ export class IndexComponent implements OnInit {
     img2: string = '';
     img3: string = '';
     img4: string = '';
+    title: string;
     constructor( @Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) {
     }

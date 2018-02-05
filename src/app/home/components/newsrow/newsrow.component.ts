@@ -14,7 +14,7 @@ export class NewsRowComponent implements OnInit {
     @Input()
     set index(index: Number) {
         this._index = index;
-        if(!index)
+        if (!index)
             this._index = 1;
         if (this._index && this._title) {
             this.getNewsList();
@@ -22,10 +22,10 @@ export class NewsRowComponent implements OnInit {
     }
     @Input()
     set title(title: String) {
-        if (title) {
-            this._title = title;
-        } else {
+        if (!title || title == '') {
             this._title = '.*';
+        } else {
+            this._title = title;
         }
         if (this._index && this._title) {
             this.getNewsList();
@@ -44,7 +44,7 @@ export class NewsRowComponent implements OnInit {
         this.getNewsList();
     }
 
-    getNewsList() { 
+    getNewsList() {        
         this.newsList = [];
         this.apollo.query<{ newsList: Array<{ id: String, title: String, brief: String, imageIds: any, createAt: String }> }>({
             query: gql`query($index:Int,$limit:Int,$info:RegExp){  
@@ -54,6 +54,7 @@ export class NewsRowComponent implements OnInit {
             }`,
             variables: { "index": `${this._index}`, "limit": `${this.limit}`, "info": `${this._title}` }
         }).subscribe(({ data }) => {
+            console.log(data.newsList);
             if (data.newsList) {
                 this.newsList = data.newsList;
             }
