@@ -9,6 +9,7 @@ import { HomeRoutingModule, ComponentList } from './home.routing';
 import { HomeComponent } from './home.component';
 import { HeaderComponent,NavComponent,BottomComponent } from './layout';
 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { HeaderComponent,NavComponent,BottomComponent } from './layout';
         ReactiveFormsModule,
         HttpModule,
         SystemCommonModule,       
-        HomeRoutingModule,              
+        HomeRoutingModule,         
+        LazyLoadImageModule        
     ],
     exports: [],
     declarations: [       
