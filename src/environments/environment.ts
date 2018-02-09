@@ -4,6 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  dataServer: 'http://localhost:8080'
+  production: true,
+  dataServer: 'http://211.149.219.127:8080'
 };

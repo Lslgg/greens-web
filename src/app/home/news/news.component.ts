@@ -37,7 +37,7 @@ export class NewsComponent implements OnInit {
             query: gql`query{
                 count:getlcNewsCount
             }`,
-        }).subscribe(({ data }) => {
+        }).subscribe(({ data }) => {            
             this.count = data.count;          
         });
     }

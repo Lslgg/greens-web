@@ -22,23 +22,23 @@ export class PageComponent implements OnInit {
     @Input()
     set count(count: number) {
         if (count) {
-            this.rcount = count;
-            this.initPage();
+            this.rcount = count;            
         }
+        this.initPage();
     }
     @Input()
     set index(index: number) {
         if (index) {
-            this.rindex = index;
-            this.initPage();
+            this.rindex = index;            
         }
+        this.initPage();
     }
     @Input()
     set limit(limit: number) {
         if (limit) {
-            this.rlimit = limit;
-            this.initPage();
+            this.rlimit = limit;            
         }
+        this.initPage();
     }
 
 
@@ -71,7 +71,7 @@ export class PageComponent implements OnInit {
         if ((this.rindex % this.rlimit) > 0 || this.pageSize == 0) {
             this.pageSize++;
         }
-        if (this.rindex <= this.rcount && this.rindex > 0 && this.rcount >= 2) {
+        if (this.rindex <= this.rcount && this.rindex > 0 && this.pageSize >= 2) {
             this.isShow = true;
         }
         else {
