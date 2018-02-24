@@ -29,6 +29,10 @@ export class IndexComponent implements OnInit {
     initData() {
         
     }
+
+    linkqq() {        
+        window.open('http://wpa.qq.com/msgrd?v=3&uin=437032704&site=qq&menu=yes','_blank');
+    }
     
 }
 

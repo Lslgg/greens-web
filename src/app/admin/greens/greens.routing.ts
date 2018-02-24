@@ -8,6 +8,7 @@ import { TypeList, TypeRoutes } from './type/type.routing';
 import { ProductList, ProductRoutes } from './product/product.routing';
 import { ContactInfoRoutes, ContactInfoList } from './contactInfo/contactInfo.routing';
 import { MenulRoutes, MenulList } from './menul/menul.routing';
+import { GardenList, GardenRoutes } from './garden/garden.routing';
 
 
 var routes: Routes = [
@@ -18,6 +19,7 @@ var routes: Routes = [
     ...ProductRoutes,
     ...ContactInfoRoutes,
     ...MenulRoutes,
+    ...GardenRoutes,
     
 ];
 
@@ -31,7 +33,8 @@ export const GreensList = [
     TypeList,
     ProductList,
     ContactInfoList,
-    MenulList
+    MenulList,
+    GardenList
 ]
 
 

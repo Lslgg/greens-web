@@ -1,0 +1,19 @@
+.picbox {
+  margin: 25px 0;
+  cursor: pointer;
+  div.img {
+    height: 225px;
+    img {
+      height:100%;
+      width:100%;
+    }
+  }
+  div.img:hover {
+    transform: scale(1.01);    
+  }
+  div.brief {
+    padding: 20px;
+    text-indent: 12px;
+    word-wrap: break-word;
+  }
+}
