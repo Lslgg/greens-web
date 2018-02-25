@@ -1,2 +1,8 @@
 <home-picrow [type]="'韭园风采-顶部图片'" [height]="'190px'"></home-picrow>
-
+<div class="row">
+    <ng-container *ngFor="let item of imageIds">
+        <div class="col-3">
+            <img [defaultImage]="'assets/logging.gif'" lazyLoad="item.url" [offset]="'100'">
+        </div>
+    </ng-container>
+</div>

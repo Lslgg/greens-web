@@ -37,10 +37,15 @@ export class PicBoxComponent implements OnInit {
         }).subscribe(({ data }) => {
             this.dataList = [];
             if(data.list) {                
-                for(var i=0;i<data.list.length;i++) {
-                    this.dataList.push(data.list[i]);
-                    this.dataList[this.dataList.length-1].imageIds[0].url = this.server.concat(this.dataList[this.dataList.length-1].imageIds[0].url+'');
+                for(var i=0;i<data.list.length;i++) {                
+                    var arr:Array<{ id: String, name: String, url: String }> = [];    
+                    for(var j=0;j<data.list[i].imageIds.length;j++) {                        
+                        arr.push({id:data.list[i].imageIds[j].id,name:data.list[i].imageIds[j].name,url:this.server.concat(data.list[i].imageIds[j].url+"") });
+                    }                                        
+                    this.dataList.push({id:data.list[i].id,title:data.list[i].title,
+                        brief:data.list[i].brief,imageIds:arr});
                 }                
+                console.log(this.dataList);
             }             
         });
     }
