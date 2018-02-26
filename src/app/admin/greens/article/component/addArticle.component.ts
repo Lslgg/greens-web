@@ -16,8 +16,7 @@ export class AddArticleComponent implements OnInit {
         type: ['', Validators.required],
         imageIds: [''],
         desc: ['', Validators.required],
-        content: ['', Validators.required],
-        // isValid: ['', Validators.required],
+        content: ['', Validators.required],        
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });
@@ -25,10 +24,10 @@ export class AddArticleComponent implements OnInit {
     article: FormStr = {
         data: gql`query($id:String){
             info:getArticleById(id:$id){
-                id,type,desc,content,isValid
+                id,type,desc,content
                 ,imageIds:Images{ id name:originalname url:path }
             }
-        }`,
+        }`,        
         save: gql`mutation($info:inputArticle){
             saveArticle(article:$info){ id }
         }`,

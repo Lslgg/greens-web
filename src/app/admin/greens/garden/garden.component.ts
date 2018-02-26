@@ -14,7 +14,7 @@ export class GardenComponent implements OnInit {
     garden: TableStr = {
         data: gql`query($index:Int,$size:Int){
             list:getGardenPage(pageIndex:$index,pageSize:$size){
-                id,title,brief,updateAt,createAt
+                id,title,updateAt,createAt
             }            
         }`,
         delete: gql`mutation($id:String){

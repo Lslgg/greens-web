@@ -47,7 +47,7 @@ export class TinyMceComponent {
             valid_elements : "*[*]",
             plugins: ['link', 'paste', 'table', 'image',"code fullscreen"],
             toolbar: `insertfile undo redo 
-                | styleselect | bold italic | link image jbimages | code fullscreen`,
+                | styleselect | bold italic | link image jbimages | code fullscreen | fontselect | fontsizeselect | backcolor`,
             skin_url: '/assets/skins/lightgray',
             images_upload_url: `${environment.dataServer}/upload`,
             images_upload_credentials: true,

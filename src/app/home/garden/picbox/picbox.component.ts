@@ -44,8 +44,7 @@ export class PicBoxComponent implements OnInit {
                     }                                        
                     this.dataList.push({id:data.list[i].id,title:data.list[i].title,
                         brief:data.list[i].brief,imageIds:arr});
-                }                
-                console.log(this.dataList);
+                }                                
             }             
         });
     }

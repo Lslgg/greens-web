@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, EventEmitter, Output } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
@@ -14,8 +14,8 @@ import { setInterval } from 'timers';
             })),
             state('right', style({
             })),
-            transition('init => right', [animate('600ms ease-in', style({ marginLeft: '-200%' }))]),
-            transition('init => left', animate('600ms ease-out', style({ marginLeft: '0' }))),
+            transition('init => right', [animate('500ms ease-in', style({ marginLeft: '-200%' }))]),
+            transition('init => left', animate('500ms ease-out', style({ marginLeft: '0' }))),
         ])
     ]
 })
@@ -24,15 +24,18 @@ export class SlideComponent implements OnInit {
 
     @Input() list: Array<String> = [];
     @Input() height: string = '500px';
+    @Input() toNextImg: Boolean = true;
+    @Input() startIndex:Number = 0;
     strArr: Array<String> = [];
     ponintArray: Array<boolean> = [];
     state: string = "init";
-    marginLeft: string = "-100%";
+    marginLeft: string = "-100%";      
+    @Output() clickImg = new EventEmitter<any>();
 
-    constructor( @Inject("commonData") private cdata: CommonData,
-        private apollo: Apollo) { }
+    constructor(@Inject("commonData") private cdata: CommonData,
+        private apollo: Apollo) {}
 
-    ngOnInit() {
+    ngOnInit() {               
         this.getList();
     }
 
@@ -43,7 +46,7 @@ export class SlideComponent implements OnInit {
         } else if (flag == 1 && this.strArr.length > 2) {
             this.state = 'right';
             this.setPoint(1);
-        }
+        }        
     }
 
     setPoint(flag: number) {
@@ -90,8 +93,10 @@ export class SlideComponent implements OnInit {
         }
     }
 
-    getList() {
-        if (this.list.length == 0) {
+    getList() {                
+        if (this.list.length > 0) {               
+            this.initList();
+        } else {                                
             type Image = { id: String, imageIds: any, type: String };
             this.apollo.query<{ imglist: Array<Image> }>({
                 query: gql`query($info:searchImages){
@@ -114,9 +119,7 @@ export class SlideComponent implements OnInit {
                     this.initList();
                 }
             });
-        } else {
-            this.initList();
-        }
+        }        
     }
 
     initList() {
@@ -133,11 +136,32 @@ export class SlideComponent implements OnInit {
             this.strArr.push(this.list[0]);
             this.strArr.push(this.list[0]);
         }
+        var l=1;        
+        while(l<this.startIndex) {
+            // this.toggleState(1);       
+            // i++;
+            var t = this.strArr[1];
+            for (var i = 1; i < this.strArr.length - 1; i++) {
+                this.strArr[i] = this.strArr[i + 1];
+            }
+            this.strArr[this.strArr.length - 2] = t;
+            this.strArr[this.strArr.length - 1] = this.strArr[1];
+            this.strArr[0] = this.strArr[this.strArr.length - 2];
+            this.state = 'init';
+            this.setPoint(1);            
+            l++;
+        }
     }
 
-    toNext() {
-        setInterval(() => {
-            this.toggleState(1);
-        }, 5000);
+    toNext() {                
+        if(this.toNextImg == true) {            
+            setInterval(() => {
+                this.toggleState(1);
+            }, 5000);
+        }        
+    }
+
+    cimg() {        
+        this.clickImg.emit();
     }
 }

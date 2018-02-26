@@ -10,18 +10,37 @@ import gql from 'graphql-tag';
 })
 
 export class PicRowComponent implements OnInit {
-
-    // dataList: { id: String, title: String, brief: String, imageIds: Array<{ id: String, name: String, url: String }> };
-    imageIds:Array<{ id: String, name: String, url: String }>=[];
-    flag:Boolean = true;
+    imageIds: Array<String> = [];
+    flag: Boolean = false;
+    isShow: Boolean = false;
     server: String;
+    index: Number = 1;
+    scWidth: Number = 0;
+    scHeight: Number = 0;
+    mgLeft: Number = 0;
+    scTop: Number = 0;
     constructor(@Inject("commonData") private cdata: CommonData,
         private router: Router, private route: ActivatedRoute, private apollo: Apollo) {
-        this.server = this.cdata.dataServer+'/';
+        this.server = this.cdata.dataServer + '/';
+        this.scWidth = window.innerWidth;
+        this.scHeight = window.innerHeight;
+        this.mgLeft = -((parseInt(this.scWidth + '') - 1140) / 2);
     }
 
     ngOnInit() {
         this.getList();
+    }
+
+    show(index: Number) {
+        this.index = parseInt(index + '') + 1;
+        this.isShow = !this.isShow;        
+        var t:Number = 0;
+        if (document.documentElement && document.documentElement.scrollTop) {
+            t = document.documentElement.scrollTop;
+        } else if (document.body) {
+            t = document.body.scrollTop;
+        }
+        this.scTop = t;
     }
 
     getList() {
@@ -33,14 +52,19 @@ export class PicRowComponent implements OnInit {
                 }
             }`
             , variables: { id: `${this.route.snapshot.params['id']}` }
-        }).subscribe(({ data }) => {            
-            var arr:Array<{id:String,name:String,url:String}> = [];
-            for(var i=0;i<data.list.imageIds.length;i++) {
-                arr.push({id:data.list.imageIds[i].id,name:data.list.imageIds[i].name,url:this.server.concat(data.list.imageIds[i].url+"")});
-            }       
-            // this.dataList = {id:data.list.id,title:data.list.title,brief:data.list.brief,imageIds:arr};
+        }).subscribe(({ data }) => {
+            var arr: Array<String> = [];
+            if (data.list && data.list.imageIds) {
+                for (var i = 0; i < data.list.imageIds.length; i++) {
+                    arr.push(this.server.concat(data.list.imageIds[i].url + ""));
+                }
+            }
             this.imageIds = arr;
-            this.flag = true;            
+            this.flag = true;
         });
+    }
+
+    clickImg() {
+        this.isShow = !this.isShow;
     }
 }
