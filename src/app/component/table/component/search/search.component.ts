@@ -24,8 +24,8 @@ export class SearchComponent implements OnInit {
     /**
      * mysql 和sql 语法一样
      * mongodb 条件下列
-     *$eq 相等
-     *$ne 不等于
+     *$eq 相等相等
+     *$ne 不等于不等于
      *$gt 大于
      *$gte大于等于
      *$lt 小于

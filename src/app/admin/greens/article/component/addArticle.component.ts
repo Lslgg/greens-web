@@ -16,7 +16,7 @@ export class AddArticleComponent implements OnInit {
         type: ['', Validators.required],
         imageIds: [''],
         desc: ['', Validators.required],
-        content: ['', Validators.required],        
+        content: ['null', Validators.required],        
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });
