@@ -12,8 +12,8 @@ export class GardenComponent implements OnInit {
 
     typeList: Array<{ key: string, value: string }> = [];
     garden: TableStr = {
-        data: gql`query($index:Int,$size:Int){
-            list:getGardenPage(pageIndex:$index,pageSize:$size){
+        data: gql`query($index:Int,$size:Int,$info:searchGarden){
+            list:getGardenPage(pageIndex:$index,pageSize:$size,garden:$info){
                 id,title,updateAt,createAt
             }            
         }`,
