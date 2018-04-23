@@ -18,21 +18,22 @@ export class IndexComponent implements OnInit {
     img3: string = '';
     img4: string = '';
     title: string;
-    constructor( @Inject("commonData") private cdata: CommonData,
+    constructor(@Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.initData();
     }
 
     initData() {
-        
+
     }
 
-    linkqq() {        
-        window.open('http://wpa.qq.com/msgrd?v=3&uin=437032704&site=qq&menu=yes','_blank');
+    linkqq() {
+        window.open('http://wpa.qq.com/msgrd?v=3&uin=437032704&site=qq&menu=yes', '_blank');
     }
-    
+
 }
 

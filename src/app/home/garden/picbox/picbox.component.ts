@@ -12,18 +12,19 @@ import gql from 'graphql-tag';
 export class PicBoxComponent implements OnInit {
 
     dataList: Array<{ id: String, title: String, brief: String, imageIds: Array<{ id: String, name: String, url: String }> }> = [];
-    server:String;
+    server: String;
     constructor(@Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) {
-            this.server = this.cdata.dataServer+'/';
+        this.server = this.cdata.dataServer + '/';
     }
 
     ngOnInit() {
-        this.getList();        
+        window.scrollTo(0, 0);
+        this.getList();
     }
 
-    detail(id:String) {        
-        this.router.navigate(['/home/garden/'+id]);
+    detail(id: String) {
+        this.router.navigate(['/home/garden/' + id]);
     }
 
     getList() {
@@ -36,16 +37,18 @@ export class PicBoxComponent implements OnInit {
             }`,
         }).subscribe(({ data }) => {
             this.dataList = [];
-            if(data.list) {                
-                for(var i=0;i<data.list.length;i++) {                
-                    var arr:Array<{ id: String, name: String, url: String }> = [];    
-                    for(var j=0;j<data.list[i].imageIds.length;j++) {                        
-                        arr.push({id:data.list[i].imageIds[j].id,name:data.list[i].imageIds[j].name,url:this.server.concat(data.list[i].imageIds[j].url+"") });
-                    }                                        
-                    this.dataList.push({id:data.list[i].id,title:data.list[i].title,
-                        brief:data.list[i].brief,imageIds:arr});
-                }                                
-            }             
+            if (data.list) {
+                for (var i = 0; i < data.list.length; i++) {
+                    var arr: Array<{ id: String, name: String, url: String }> = [];
+                    for (var j = 0; j < data.list[i].imageIds.length; j++) {
+                        arr.push({ id: data.list[i].imageIds[j].id, name: data.list[i].imageIds[j].name, url: this.server.concat(data.list[i].imageIds[j].url + "") });
+                    }
+                    this.dataList.push({
+                        id: data.list[i].id, title: data.list[i].title,
+                        brief: data.list[i].brief, imageIds: arr
+                    });
+                }
+            }
         });
     }
 }

@@ -20,15 +20,16 @@ export class NewsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.title = this.route.snapshot.params['title'];        
-        this.initPage();       
+        window.scrollTo(0, 0);
+        this.title = this.route.snapshot.params['title'];
+        this.initPage();
     }
 
     initPage() {
         var index = this.route.snapshot.params['index'];
         if (!index)
             index = 1;
-        this.index = parseInt(index);        
+        this.index = parseInt(index);
         this.initCount();
     }
 
@@ -37,13 +38,13 @@ export class NewsComponent implements OnInit {
             query: gql`query{
                 count:getlcNewsCount
             }`,
-        }).subscribe(({ data }) => {            
-            this.count = data.count;          
+        }).subscribe(({ data }) => {
+            this.count = data.count;
         });
     }
 
-    onChangep(num: number) {               
-        this.index = num;        
-        this.router.navigate(['/home/news/' + num]);        
+    onChangep(num: number) {
+        this.index = num;
+        this.router.navigate(['/home/news/' + num]);
     }
 }

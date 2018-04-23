@@ -16,5 +16,6 @@ export class JoinComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 }

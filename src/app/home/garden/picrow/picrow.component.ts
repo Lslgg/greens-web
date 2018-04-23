@@ -10,6 +10,7 @@ import gql from 'graphql-tag';
 })
 
 export class PicRowComponent implements OnInit {
+
     imageIds: Array<String> = [];
     flag: Boolean = false;
     isShow: Boolean = false;
@@ -19,6 +20,7 @@ export class PicRowComponent implements OnInit {
     scHeight: Number = 0;
     mgLeft: Number = 0;
     scTop: Number = 0;
+
     constructor(@Inject("commonData") private cdata: CommonData,
         private router: Router, private route: ActivatedRoute, private apollo: Apollo) {
         this.server = this.cdata.dataServer + '/';
@@ -28,13 +30,14 @@ export class PicRowComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         this.getList();
     }
 
     show(index: Number) {
         this.index = parseInt(index + '') + 1;
-        this.isShow = !this.isShow;        
-        var t:Number = 0;
+        this.isShow = !this.isShow;
+        var t: Number = 0;
         if (document.documentElement && document.documentElement.scrollTop) {
             t = document.documentElement.scrollTop;
         } else if (document.body) {

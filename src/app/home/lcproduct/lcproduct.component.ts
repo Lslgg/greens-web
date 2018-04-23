@@ -13,11 +13,12 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 export class LcProductComponent implements OnInit {
 
     imgList: Array<String> = [];
-    constructor( @Inject("commonData") private cdata: CommonData,
+    constructor(@Inject("commonData") private cdata: CommonData,
         private router: Router, private apollo: Apollo) {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 
     navChange(e: String) {

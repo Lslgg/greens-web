@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+greens
 /tmp
 /out-tsc
 
