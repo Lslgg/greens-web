@@ -35,18 +35,6 @@ export class AppComponent {
   }
 
   private setWebSiteTitle() {
-    // this.router.events.filter(event => event instanceof NavigationEnd)
-    //   .map(() => this.activatedRoute)
-    //   .map(route => {
-    //     while (route.firstChild) route = route.firstChild;
-    //     return route;
-    //   })
-    //   .filter(route => route.outlet === 'primary')
-    //   .mergeMap(route => route.data)
-    //   .subscribe((event) => {
-    //     this.titleService.setTitle(event['title']);        
-    //   });
-
     this.apollo.query<{ contactInfo: any }>({
       query: gql`query{
           contactInfo:getContactInfo {

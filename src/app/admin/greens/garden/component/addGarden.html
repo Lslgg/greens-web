@@ -1,0 +1,13 @@
+<template-panel-form Title="添加韭园风采">
+  <data-form [formInfo]="gardenForm" [dataStr]="garden">
+    <form-item name="title" title="标题">
+      <form-validator type="required" title="请输入描述"></form-validator>
+    </form-item>
+    <form-item name="brief" title="简介">
+      <form-validator type="required" title="请输入简介"></form-validator>
+    </form-item>
+    <form-item name="imageIds" title="图片" type="file">
+      <form-validator type="required" title="请选择上传图片"></form-validator>
+    </form-item>    
+  </data-form>
+</template-panel-form>

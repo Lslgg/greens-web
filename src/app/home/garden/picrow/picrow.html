@@ -1,0 +1,13 @@
+<home-picrow [type]="'韭园风采-顶部图片'" [height]="'190'"></home-picrow>
+<div class="row picrow" *ngIf="flag">
+  <ng-container *ngFor="let item of imageIds;let i = index">
+    <div class="col-4 pic" (click)="show(i)">
+      <img [defaultImage]="'assets/logging.gif'" [lazyLoad]="item" [offset]="'100'">
+    </div>
+  </ng-container>
+</div>
+<div class="gd-slide" *ngIf="flag && isShow" [style.marginTop.px]="scTop" [style.width.px]="scWidth" [style.height.px]="scHeight" [style.marginLeft.px]="mgLeft" >
+  <div class="slide-box">
+    <home-slide [list]="imageIds" (clickImg)="clickImg()" toNextImg=false startIndex="{{index}}"></home-slide>
+  </div>
+</div>

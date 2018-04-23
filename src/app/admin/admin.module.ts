@@ -9,7 +9,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 //admin common template
 import { TemplateModule } from './common/template';
 //custom
-import { BreadcrumbsComponent } from '../component';
 import { TableModule } from '../component/table/table.module';
 import { DataFormModule } from '../component/dataform';
 import { TreeModule } from '../component/tree';
@@ -54,7 +53,6 @@ let directive=[
         directive,
         CheckedPipe,
         KeysPipe,
-        BreadcrumbsComponent,
         AsideToggleDirectiveNew,
         ComponentList
     ],

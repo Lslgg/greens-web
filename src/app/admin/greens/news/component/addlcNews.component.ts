@@ -15,8 +15,7 @@ export class AddlcNewsComponent implements OnInit {
         title: ['', Validators.required],
         brief: ['', Validators.required],
         imageIds: ['', Validators.required],
-        content: ['', Validators.required],
-        isValid: ['', Validators.required],
+        content: ['', Validators.required],        
         startDate: [this.cdate.startDate],
         endDate: [this.cdate.endDate],
     });

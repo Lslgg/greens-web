@@ -19,8 +19,9 @@ export class NewsDetailComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
         if (this.id) {
-            this.apollo.query<{ news: Array<{id:string,title:string}>}>({
+            this.apollo.query<{ news: Array<{ id: string, title: string }> }>({
                 query: gql`query($id:Json){
                     news:getlcNewsWhere(lcnews:{_id:$id},limit:1) {
                         id,title
@@ -29,14 +30,14 @@ export class NewsDetailComponent implements OnInit {
                 variables: { id: `{"$gt":"${this.id}"}` }
             }).subscribe(({ data }) => {
                 if (data.news && data.news[0]) {
-                    if(window.location.href.includes("/home/snewsDetail")){
-                        this.nextInfo = {url:"/home/newsDetail/"+data.news[0].id, title:data.news[0].title};                    
+                    if (window.location.href.includes("/home/snewsDetail")) {
+                        this.nextInfo = { url: "/home/newsDetail/" + data.news[0].id, title: data.news[0].title };
                     } else {
-                        this.nextInfo = {url:"/home/snewsDetail/"+data.news[0].id, title:data.news[0].title};                    
+                        this.nextInfo = { url: "/home/snewsDetail/" + data.news[0].id, title: data.news[0].title };
                     }
-                    
+
                 } else {
-                    this.nextInfo = {url:"/home/news", title:"没有了"};                                        
+                    this.nextInfo = { url: "/home/news", title: "没有了" };
                 }
             });
         }

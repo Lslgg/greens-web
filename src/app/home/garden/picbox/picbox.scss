@@ -1,0 +1,32 @@
+.picbox {
+  margin: 25px 0;  
+  div.img {
+    height: 225px;
+    img {
+      border-radius: 3px;      
+      height: 100%;
+      width: 100%;
+      border:1px solid #ccc;
+    }
+  }
+  div.brief {
+    padding: 10px 20px;
+    text-indent: 12px;
+    word-wrap: break-word;
+    font-size: 16px;
+    color: #666;
+  }
+  .sbox {
+    margin-bottom:15px;
+    cursor: pointer;
+  }
+
+  .sbox:hover {
+    div.img {
+      transform: scale(1.01);
+    }
+    div.brief {
+      color: black;
+    }
+  }
+}

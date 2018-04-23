@@ -39,8 +39,7 @@ export class TbodyTdComponent implements OnInit {
         this.onSetInfo.emit(info);
     }
 
-    allCheck(isCheck: boolean) {
-        console.log(this.item["checkboxList"]);
+    allCheck(isCheck: boolean) {        
         for (var i = 0; i < this.item["checkboxList"].length; i++) {
             var self = this.item["checkboxList"][i];
             self["isCheck"] = !isCheck;

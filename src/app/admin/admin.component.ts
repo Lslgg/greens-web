@@ -15,13 +15,13 @@ export class AdminComponent implements OnInit {
 
     constructor(private apollo: Apollo, private router: Router) {
         this.apollo.query({
-            query: gql`query{ id:currentUser{ id } }`})
-            .subscribe(({ data }) => {
-                if (!data) {
-                    alert("请先登录用户！");
-                    this.router.navigate(['login']);
-                }
-            });
+            query: gql`query{ id:currentUser{ id } }`
+        }).subscribe(({ data }) => {
+            if (!data['id']) {
+                alert("请先登录用户！");
+                this.router.navigate(['login']);
+            }
+        });
     }
 
     ngOnInit() { }

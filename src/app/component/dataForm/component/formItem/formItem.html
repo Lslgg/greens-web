@@ -52,7 +52,7 @@
     <ng-container *ngIf="type=='checkbox'">
       <mat-checkbox formControlName="{{name}}">{{title}}</mat-checkbox>
     </ng-container>
-    <ng-container *ngIf="type=='editor'">
+    <ng-container *ngIf="type=='editor' && editorContent">
       <!-- <input [(ngModel)]="deitor.content" class="form-control" formControlName="{{name}}" type="hidden">
       <component-editor [name]="name" #deitor></component-editor> -->
       <input [(ngModel)]="editor.content" class="form-control" formControlName="{{name}}" type="hidden">

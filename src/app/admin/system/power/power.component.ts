@@ -78,8 +78,7 @@ export class PowerComponent implements OnInit {
 				variables: { power: power }
 			}
 
-			this.apollo.mutate(mutInfo).subscribe(({ data }) => {
-				console.log(data);
+			this.apollo.mutate(mutInfo).subscribe(({ data }) => {				
 				alert(data.success ? "成功！" : "失败！");
 				if (data.success) {
 					tablePower.getPage(1);

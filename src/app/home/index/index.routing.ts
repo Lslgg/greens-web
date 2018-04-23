@@ -6,6 +6,9 @@ import { SgardenComponent } from './sgarden/sgarden.component';
 import { SaboutComponent } from './sabout/sabout.component';
 import { SjoinComponent } from './sjoin/sjoin.component';
 
+import { NewsBriefComponent,SnavComponent } from './components';
+
+
 export const IndexRoutes: Routes = [
   // { path: '', component: IndexComponent, data: { title: '聊城韭菜', module: 'none', power: "none" } },
   { path: '', redirectTo: '/home/index/sproduct', pathMatch: 'full', },
@@ -47,6 +50,8 @@ export const IndexList = [
   SproductComponent,
   SgardenComponent,
   SaboutComponent,
-  SjoinComponent
+  SjoinComponent,
+  NewsBriefComponent,
+  SnavComponent
 ];
 

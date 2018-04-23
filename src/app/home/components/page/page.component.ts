@@ -18,27 +18,27 @@ export class PageComponent implements OnInit {
     rindex: number;
     rcount: number;
     rlimit: number;
-    pageSize:number;
+    pageSize: number;
     @Input()
     set count(count: number) {
         if (count) {
             this.rcount = count;            
-            this.initPage();
         }
+        this.initPage();
     }
     @Input()
     set index(index: number) {
         if (index) {
             this.rindex = index;            
-            this.initPage();
         }
+        this.initPage();
     }
     @Input()
     set limit(limit: number) {
-        if (limit) {            
-            this.rlimit = limit;
-            this.initPage();
+        if (limit) {
+            this.rlimit = limit;            
         }
+        this.initPage();
     }
 
 
@@ -65,16 +65,16 @@ export class PageComponent implements OnInit {
     initPage() {
         if (!this.rindex || !this.rcount || !this.rlimit) {
             return;
-        }        
-        var t = this.rcount/this.rlimit;
-        this.pageSize = parseInt(t+'');       
+        }
+        var t = this.rcount / this.rlimit;
+        this.pageSize = parseInt(t + '');
         if ((this.rindex % this.rlimit) > 0 || this.pageSize == 0) {
             this.pageSize++;
-        }                
-        if (this.rindex <= this.rcount && this.rindex > 0 && this.rcount >= 2){
+        }
+        if (this.rindex <= this.rcount && this.rindex > 0 && this.pageSize >= 2) {
             this.isShow = true;
-        }            
-        else{
+        }
+        else {
             return;
         }
 

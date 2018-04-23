@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { DataFormComponent } from '../../../component/dataform/component/index';
 
 @Component({
     selector: 'home-newsbrief',

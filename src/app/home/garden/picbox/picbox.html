@@ -1,0 +1,16 @@
+<div class="row picbox">
+  <ng-container *ngFor="let item of dataList">
+    <div class="col-4 sbox" (click)="detail(item.id)">
+      <div class="row">
+        <div class="col-12 img">
+          <img [defaultImage]="'assets/logging.gif'" [lazyLoad]="item.imageIds[0].url" [offset]="'100'">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 brief">
+          {{item.brief}}
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

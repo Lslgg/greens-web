@@ -16,5 +16,6 @@ export class GardenComponent implements OnInit {
     }
 
     ngOnInit() {
+        window.scrollTo(0, 0);
     }
 }

@@ -104,8 +104,7 @@ export class DataFormComponent implements OnInit {
                 alert(data ? "操作成功！" : "操作失败！");
                 this.router.navigate([this.dataStr.url]);
             })
-        }
-        console.log(formObj);
+        }        
         this.onSubmit.emit(formObj);
     }
 

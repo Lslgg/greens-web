@@ -8,18 +8,21 @@ import { TypeList, TypeRoutes } from './type/type.routing';
 import { ProductList, ProductRoutes } from './product/product.routing';
 import { ContactInfoRoutes, ContactInfoList } from './contactInfo/contactInfo.routing';
 import { MenulRoutes, MenulList } from './menul/menul.routing';
+import { GardenList, GardenRoutes } from './garden/garden.routing';
 
 
-var routes: Routes = [];
-//玩家充值管理
-routes = routes.concat(ImagesRoutes);
-//玩家充值管理
-routes = routes.concat(ArticleRoutes);
-routes = routes.concat(lcNewsRoutes);
-routes = routes.concat(TypeRoutes);
-routes = routes.concat(ProductRoutes);
-routes = routes.concat(ContactInfoRoutes);
-routes = routes.concat(MenulRoutes);
+var routes: Routes = [
+    ...ImagesRoutes,
+    ...ArticleRoutes,
+    ...lcNewsRoutes,
+    ...TypeRoutes,
+    ...ProductRoutes,
+    ...ContactInfoRoutes,
+    ...MenulRoutes,
+    ...GardenRoutes,
+    
+];
+
 export var GreensRoutes: Routes = routes;
 
 //一定要将路由加载的模块导出到admin.module模块
@@ -30,7 +33,8 @@ export const GreensList = [
     TypeList,
     ProductList,
     ContactInfoList,
-    MenulList
+    MenulList,
+    GardenList
 ]
 
 

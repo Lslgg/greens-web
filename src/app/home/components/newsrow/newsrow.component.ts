@@ -13,13 +13,26 @@ export class NewsRowComponent implements OnInit {
     @Input() limit: Number = 5;
     @Input()
     set index(index: Number) {
-        if (index && this.title && index != this._index) {
-            this._index = index;
+        this._index = index;
+        if (!index)
+            this._index = 1;
+        if (this._index && this._title) {
+            this.getNewsList();
+        }
+    }
+    @Input()
+    set title(title: String) {
+        if (!title || title == '') {
+            this._title = '.*';
+        } else {
+            this._title = title;
+        }
+        if (this._index && this._title) {
             this.getNewsList();
         }
     }
     _index: Number = 1;
-    @Input() title: String;
+    _title: String;
     newsList: Array<{ id: String, title: String, brief: String, imageIds: any }> = [];
     dataServer: String = '';
     info: String;
@@ -28,14 +41,10 @@ export class NewsRowComponent implements OnInit {
 
     ngOnInit() {
         this.dataServer = this.cdata.dataServer + '/';
-        if (!this.title)
-            this.title = '.*';
-        if (!this._index)
-            this._index = 1;
         this.getNewsList();
     }
 
-    getNewsList() {
+    getNewsList() {        
         this.newsList = [];
         this.apollo.query<{ newsList: Array<{ id: String, title: String, brief: String, imageIds: any, createAt: String }> }>({
             query: gql`query($index:Int,$limit:Int,$info:RegExp){  
@@ -43,8 +52,8 @@ export class NewsRowComponent implements OnInit {
                     id,title,brief,imageIds:Images{ url:path },createAt
                 }	
             }`,
-            variables: { "index": `${this._index}`, "limit": `${this.limit}`, "info": `${this.title}` }
-        }).subscribe(({ data }) => {
+            variables: { "index": `${this._index}`, "limit": `${this.limit}`, "info": `${this._title}` }
+        }).subscribe(({ data }) => {            
             if (data.newsList) {
                 this.newsList = data.newsList;
             }

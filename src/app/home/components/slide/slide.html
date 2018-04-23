@@ -3,13 +3,13 @@
     <ul class="picul">
       <ng-container *ngFor="let item of strArr;let i = index;">
         <ng-container *ngIf="i == 0">
-          <li [@state]="state" (@state.done)="animationDone($event)">
+          <li [@state]="state" (@state.done)="animationDone($event)" (click)="cimg()">
             <img src="{{item}}" alt="pic">
           </li>
         </ng-container>
         <ng-container *ngIf="i != 0">
           <li>
-            <img src="{{item}}" alt="pic">
+            <img src="{{item}}" alt="pic" (click)="cimg()">
           </li>
         </ng-container>
       </ng-container>
