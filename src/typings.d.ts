@@ -22,8 +22,8 @@ type Condition = {
 }
 
 type TableStr = {
-    data: string,
-    delete?: string,
+    data: any,
+    delete?: any,
     url?: string,
     where?: string | object,
     isPage?: boolean,
@@ -32,7 +32,7 @@ type TableStr = {
 type FormStr = {
     data: string,
     module?: string,
-    save?: string,
+    save?: any,
     url?: string
 }
 
