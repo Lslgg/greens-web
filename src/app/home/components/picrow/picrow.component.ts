@@ -28,7 +28,7 @@ export class PicRowComponent implements OnInit {
                 }`,
                 variables: { info: { "type": `{"$eq":"${this.type}"}` } }
             }).subscribe(({ data }) => {                               
-                if (data.img && data.img.imageIds && data.img.imageIds[0]) {                    
+                if (data.img && data.img.imageIds && data.img.imageIds[0]) {    
                     this.img = this.cdata.dataServer + '/' + data.img.imageIds[0].url;                                        
                 }                
             });

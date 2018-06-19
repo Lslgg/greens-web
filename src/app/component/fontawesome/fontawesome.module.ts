@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { FontawesomeComponent } from './Fontawesome.component';
+import { FontawesomeComponent } from './fontawesome.component';
 
 @NgModule({
     imports: [],

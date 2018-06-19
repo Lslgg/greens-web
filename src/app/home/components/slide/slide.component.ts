@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Inject, EventEmitter, Output } from '@angular
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
-import { setInterval } from 'timers';
 
 @Component({
     selector: 'home-slide',
