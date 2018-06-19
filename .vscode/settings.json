@@ -17,13 +17,12 @@
         "dist":true,
         "LICENSE":true,
         "tsconfig.json":true,
-        ".gitignore":true,
+        ".gitignore":false,
         "tslint.json":true,
         "yarn-error.log":true,
         "karma.conf.js":true,
         "protractor.conf.js":true,
         "upgrade.md":true,
-        "e2e":true,        
         "src/test.ts":true
     }
 }
