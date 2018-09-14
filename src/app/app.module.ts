@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UMeditorModule } from 'ngx-umeditor';
 
-import { AppRoutingModule } from './app.routing'
+import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-import { LocationStrategy,HashLocationStrategy } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ApolloModule } from 'apollo-angular';

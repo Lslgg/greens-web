@@ -16,11 +16,11 @@ export class EditorComponent implements OnInit {
         imageUploadParam: 'avatar',
         imageUploadURL: `${environment.dataServer}/profile`,
         events: {
-            'froalaEditor.initialized': () => {                
+            'froalaEditor.initialized': () => {
             },
             'froalaEditor.image.removed': (e, editor, $img) => {
                 var list = $img[0].src.split("/");
-                var fileName=list[list.length-1];
+                var fileName = list[list.length - 1];
                 this.http.post(`${environment.dataServer}/delimg/${fileName}`, null);
             }
         }
